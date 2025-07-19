@@ -12,7 +12,6 @@ import { PageHeader } from "@/components/page-header";
 import { ContactCard } from "@/components/contact/contact-card";
 import { ContactForm } from "@/components/contact/contact-form";
 import { ContactMap } from "@/components/contact/contact-map";
-import { DATA } from "@/data";
 
 const EMAIL_CONFIG = {
   serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -98,10 +97,10 @@ const ContactPage: React.FC = () => {
 
   return (
     <section className="py-20">
-      <PageHeader texts={DATA.morphingTexts.contact} />
+      <PageHeader texts={[]} />
       <div className="container mx-auto px-4">
-        <ContactCard heading={DATA.contact.heading}>
-          <ContactMap src={DATA.contact.location.mapSrc} />
+        <ContactCard heading="Contact Me">
+          <ContactMap src="https://maps.google.com/maps?q=Aveiro, Portugal&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" />
           <ContactForm
             isSubmitting={state.isSubmitting}
             isSuccess={state.isSuccess}
