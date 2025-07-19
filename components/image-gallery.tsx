@@ -35,6 +35,13 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
           initial={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
           onClick={handleImageClick}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              handleImageClick();
+            }
+          }}
         >
           <Skeleton className="w-full h-full rounded-lg" isLoaded={imageLoaded}>
             <img
@@ -57,6 +64,13 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 cursor-zoom-out"
           onClick={handleCloseFullscreen}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              handleCloseFullscreen();
+            }
+          }}
         >
           <img
             alt={`Project image fullscreen ${activeIndex + 1}`}
@@ -78,6 +92,13 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.05 }}
             onClick={() => handleThumbnailClick(index)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                handleThumbnailClick(index);
+              }
+            }}
           >
             <img
               alt={`Thumbnail ${index + 1}`}
