@@ -3,7 +3,7 @@
 import type { PressEvent } from "@react-aria/interactions";
 
 import { motion } from "framer-motion";
-import { Button, Link } from "@heroui/react";
+import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
 
 import { Hole } from "@/components/backgrounds/hole/hole";
@@ -39,16 +39,23 @@ export const HeroSection = ({
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
+          {/* Logos row above hero text */}
+          <div className="flex justify-center gap-6 mb-6">
+            <Icon className="w-10 h-10" icon="logos:react" />
+            <Icon className="w-10 h-10" icon="skill-icons:nextjs-dark" />
+            <Icon className="w-10 h-10" icon="simple-icons:expo" />
+            <Icon className="w-10 h-10" icon="logos:typescript-icon" />
+            <Icon className="w-10 h-10" icon="logos:tailwindcss-icon" />
+          </div>
           <motion.h1
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent"
+            className="text-4xl md:text-6xl font-bold mb-6 text-white"
             initial={{ opacity: 0, y: 20 }}
             transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             Hi, I&apos;m {name} &mdash; I design &amp; code modern web
             experiences.
           </motion.h1>
-
           <motion.p
             animate={{ opacity: 1, y: 0 }}
             className="text-foreground-600 text-lg md:text-xl mb-8 leading-relaxed"
@@ -57,30 +64,13 @@ export const HeroSection = ({
           >
             {title}: {subtitle}
           </motion.p>
-
           <motion.div
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
             transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Link
-              download
-              aria-label="Download CV in PDF format"
-              className="w-full sm:w-auto"
-              href="/new CV.pdf"
-            >
-              <Button
-                fullWidth
-                aria-label="Downoald CV"
-                color="primary"
-                endContent={<Icon icon="lucide:download" />}
-                size="lg"
-                variant="shadow"
-              >
-                Download CV
-              </Button>
-            </Link>
+            {/* Removed Download CV button */}
             <Button
               fullWidth
               aria-label="View Work"
@@ -88,7 +78,7 @@ export const HeroSection = ({
               color="primary"
               endContent={<Icon icon="lucide:arrow-down" />}
               size="lg"
-              variant="bordered"
+              variant="shadow"
               onPress={scrollToWork}
             >
               View Work

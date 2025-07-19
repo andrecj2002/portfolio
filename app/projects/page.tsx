@@ -1,17 +1,36 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 import { PageHeader } from "@/components/page-header";
 import { ProjectsTabs } from "@/components/projects/projects-tabs";
 import { ProjectsGrid } from "@/components/projects/projects-grid";
 import { DATA } from "@/data";
 
+const normalizeCategory = (cat: string) => cat.trim().toLowerCase();
+
 const ProjectsPage = () => {
   const allProjects = DATA.projects.work;
 
+  // Debug: Log project titles and order
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log("Projects:", allProjects.map((p) => p.title));
+  }, [allProjects]);
+
+  // Normalize categories for tab display and filtering
   const categories = useMemo(
-    () => ["All", ...new Set(allProjects.map((project) => project.category))],
+    () => [
+      "All",
+      ...Array.from(
+        new Set(allProjects.map((project) => normalizeCategory(project.category))),
+      ).map(
+        (cat) =>
+          allProjects.find(
+            (p) => normalizeCategory(p.category) === cat,
+          )?.category || cat,
+      ),
+    ],
     [allProjects],
   );
 
@@ -22,7 +41,9 @@ const ProjectsPage = () => {
       selectedCategory === "All"
         ? allProjects
         : allProjects.filter(
-            (project) => project.category === selectedCategory,
+            (project) =>
+              normalizeCategory(project.category) ===
+              normalizeCategory(selectedCategory),
           ),
     [selectedCategory, allProjects],
   );
