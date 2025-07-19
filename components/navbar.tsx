@@ -17,6 +17,7 @@ import { motion } from "framer-motion";
 
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { DATA } from "@/data";
+import { LogoBranco } from "@/components/logo-branco";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,11 +41,11 @@ export const Navigation = () => {
             transition={{ duration: 0.5 }}
           >
             <Link
-              className="font-bold text-inherit text-xl bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent"
+              className="flex items-center gap-2"
               href="/"
               onClick={() => setIsMenuOpen(false)}
             >
-              Portfolio
+              <LogoBranco className="w-14 h-14" size={56} />
             </Link>
           </motion.div>
         </NavbarBrand>

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Button } from "@heroui/react";
+import Link from "next/link";
 
 import { ProjectCard } from "@/components/project-card";
 import { ProjectModal } from "@/components/project-modal";
@@ -57,6 +59,20 @@ export const WorkSection = () => {
               />
             </motion.div>
           ))}
+        </div>
+        <div className="flex justify-center mt-10">
+          <Link href="/projects" passHref legacyBehavior>
+            <Button
+              as="a"
+              color="primary"
+              size="lg"
+              variant="shadow"
+              className="px-8 py-4 text-lg font-semibold rounded-xl shadow-md"
+              endContent={<span className="ml-2">→</span>}
+            >
+              View More Work
+            </Button>
+          </Link>
         </div>
 
         <ProjectModal

@@ -13,19 +13,19 @@ export const DATA = {
       overview: [
         {
           name: "Web Development",
-          level: 90,
+          level: 100,
           icon: "lucide:code",
-          color: "primary",
+          olor: "primary",
         },
         {
           name: "UI/UX Design",
-          level: 85,
+          level: 100,
           icon: "lucide:layout-dashboard",
           color: "secondary",
         },
         {
           name: "Mobile Development",
-          level: 82,
+          level: 95,
           icon: "lucide:smartphone",
           color: "success",
         },
@@ -53,14 +53,14 @@ export const DATA = {
     education: [
       {
         title: "Multimedia and Communication Technologies",
-        date: "2022 - Present",
+        date: "2021 - 2024",
         icon: "mdi:school",
         description:
-          "Currently pursuing a Bachelor's degree in Multimedia and Communication Technologies at the University of Aveiro. Gaining strong skills in web development, UI/UX design, content creation, and digital communication.",
+          "Pursued a Bachelor's degree in Multimedia and Communication Technologies at the University of Aveiro. Gained strong skills in web development, UI/UX design, content creation, and digital communication.",
       },
       {
         title: "High School Education",
-        date: "2019 - 2022",
+        date: "2024 - 2026",
         icon: "mdi:school-outline",
         description:
           "Completed high school education where I first discovered my passion for coding and technology. This foundational period sparked my interest in programming and digital design.",
@@ -109,7 +109,7 @@ export const DATA = {
           { name: "OpenAI", icon: "simple-icons:openai" },
         ],
       },
-      uiux: {
+      ux: {
         description:
           "I design smooth, user-centered interfaces and high-fidelity prototypes.",
         tools: [
@@ -147,12 +147,12 @@ export const DATA = {
         title: "CosmoZone",
         description:
           "A program that allows you to manage, add and edit events as well as interaction from a comments tab.",
-        image: "https://img.heroui.chat/image/dashboard?w=600&h=400&u=1",
+        image: "/images/cosmozone_cover.png",
         gallery: [
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=1",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=1-1",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=1-2",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=1-3",
+          "/images/cosmozone_1.png",
+          "/images/cosmozone_2.png",
+          "/images/cosmozone_aa.png",
+          "/images/cosmozone_cover.png",
         ],
         category: "Web Development",
         details:
@@ -194,12 +194,12 @@ export const DATA = {
         title: "PokéBase",
         description:
           "A project to simulate decks from the Pokémon TCG game with Firebase authentication and API integration.",
-        image: "https://img.heroui.chat/image/dashboard?w=600&h=400&u=2",
+        image: "/images/pokebox.png",
         gallery: [
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=2",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=2-1",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=2-2",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=2-3",
+          "/images/pokebox.png",
+          "/images/pokebox_1.png",
+          "/images/pokebox_2.png",
+          "/images/pokebox_3.png",
         ],
         category: "Web Development",
         details:
@@ -244,35 +244,27 @@ export const DATA = {
     projects: ["My Work", "Creations", "Experiments", "Innovations"] as const,
     contact: ["Let's", "Build", "Together"] as const,
   },
-  contact: {
-    heading: "Have a project in mind? Get in touch and let's create something amazing.",
-    location: {
-      mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.017947223557!2d-122.41941508468191!3d37.774929779759245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809cbb69f3ef%3A0x4c80b42c33b6a77d!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1715701234567!5m2!1sen!2sus",
-      address: "Aveiro, Portugal",
-    },
-  },
   navigation: [
     { name: "Home", href: "/", icon: "lucide:home" },
     { name: "About", href: "/about", icon: "lucide:user" },
     { name: "Projects", href: "/projects", icon: "lucide:folder-code" },
-    { name: "Contact", href: "/contact", icon: "lucide:send" },
   ],
   footer: {
     name: "André Jorge",
     description: "Always interested in new projects and collaborations.",
     contact: {
-      email: "hello@example.com",
-      phone: "+351 (XXX) XXX-XXX",
+      email: "andrecostaj2002@gmail.com",
+      phone: "+351 916 750 888",
       location: "Aveiro, Portugal",
     },
     socialLinks: [
-      { platform: "GitHub", url: "https://github.com/kikode24", icon: "mdi:github" },
+      { platform: "GitHub", url: "https://github.com/andrecj2002", icon: "mdi:github" },
       {
         platform: "LinkedIn",
         url: "https://linkedin.com",
         icon: "mdi:linkedin",
       },
     ],
-    services: ["Web Development", "UI/UX Design", "Content Creation", "JavaScript Development"],
+    services: ["Web Development", "UI/UX Design", "Content Creation", "Web Development"],
   },
 } as const;

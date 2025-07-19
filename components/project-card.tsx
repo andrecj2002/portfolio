@@ -21,14 +21,14 @@ export const ProjectCard = memo(function ProjectCard({
       radius="lg"
     >
       <CardBody className="p-0 flex flex-col h-full">
-        <div className="relative w-full aspect-[16/10] overflow-hidden">
+        <div className="relative w-full aspect-[16/10] bg-black">
           <Image
             isZoomed
             removeWrapper
             alt={project.title}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-contain"
             classNames={{
-              img: "w-full h-full object-cover",
+              img: "w-full h-full object-contain",
               zoomedWrapper: "w-full h-full",
             }}
             loading="lazy"

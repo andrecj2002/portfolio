@@ -21,7 +21,7 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
         <motion.div
           key={images[activeIndex]}
           animate={{ opacity: 1 }}
-          className="w-full max-w-xl h-65 md:h-80 overflow-hidden rounded-xl"
+          className="flex items-center justify-center w-full max-w-xl h-65 md:h-80 overflow-hidden rounded-xl bg-black"
           exit={{ opacity: 0 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
@@ -29,7 +29,8 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
           <Skeleton className="w-full h-full rounded-lg" isLoaded={imageLoaded}>
             <img
               alt={`Project image ${activeIndex + 1}`}
-              className="w-full h-full object-cover"
+              className="max-h-full max-w-full object-contain"
+              style={{ display: 'block', margin: '0 auto', maxHeight: '100%', maxWidth: '100%' }}
               loading="lazy"
               src={images[activeIndex]}
               onLoad={() => setImageLoaded(true)}
@@ -52,7 +53,7 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
           >
             <img
               alt={`Thumbnail ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               loading="lazy"
               src={img}
             />

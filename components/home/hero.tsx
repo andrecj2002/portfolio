@@ -8,6 +8,7 @@ import { Icon } from "@iconify/react";
 
 import { Hole } from "@/components/backgrounds/hole/hole";
 import { DATA } from "@/data";
+import { LogoBranco } from "@/components/logo-branco";
 
 export const HeroSection = ({
   showBackground = true,
@@ -31,7 +32,7 @@ export const HeroSection = ({
   return (
     <section className="min-h-[calc(100vh-64px)] flex items-center justify-center relative overflow-hidden bg-background">
       {showBackground && <Hole />}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-transparent" style={{backgroundImage: 'url("/images/home-bg.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0}} />
       <div className="container mx-auto px-4 z-10">
         <motion.div
           animate={{ opacity: 1, y: 0 }}
@@ -39,13 +40,13 @@ export const HeroSection = ({
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Logos row above hero text */}
-          <div className="flex justify-center gap-6 mb-6">
-            <Icon className="w-10 h-10" icon="logos:react" />
-            <Icon className="w-10 h-10" icon="skill-icons:nextjs-dark" />
-            <Icon className="w-10 h-10" icon="simple-icons:expo" />
-            <Icon className="w-10 h-10" icon="logos:typescript-icon" />
-            <Icon className="w-10 h-10" icon="logos:tailwindcss-icon" />
+          <LogoBranco className="mx-auto mb-8" size={140} />
+          <div className="flex justify-center gap-4 mb-6">
+            <Icon className="w-7 h-7" icon="logos:react" />
+            <Icon className="w-7 h-7" icon="skill-icons:nextjs-dark" />
+            <Icon className="w-7 h-7" icon="simple-icons:expo" />
+            <Icon className="w-7 h-7" icon="logos:typescript-icon" />
+            <Icon className="w-7 h-7" icon="logos:tailwindcss-icon" />
           </div>
           <motion.h1
             animate={{ opacity: 1, y: 0 }}
@@ -70,7 +71,6 @@ export const HeroSection = ({
             initial={{ opacity: 0, y: 20 }}
             transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Removed Download CV button */}
             <Button
               fullWidth
               aria-label="View Work"
