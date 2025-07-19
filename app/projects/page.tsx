@@ -14,7 +14,6 @@ const ProjectsPage = () => {
 
   // Debug: Log project titles and order
   useEffect(() => {
-    // eslint-disable-next-line no-console
     console.log(
       "Projects:",
       allProjects.map((p) => p.title),

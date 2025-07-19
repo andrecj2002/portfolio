@@ -15,7 +15,7 @@ export const DATA = {
           name: "Web Development",
           level: 100,
           icon: "lucide:code",
-          olor: "primary",
+          color: "primary",
         },
         {
           name: "UI/UX Design",

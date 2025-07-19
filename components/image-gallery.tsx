@@ -1,6 +1,7 @@
 import { memo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Skeleton } from "@heroui/react";
+import Image from "next/image";
 
 interface ImageGalleryProps {
   images: readonly string[];
@@ -44,8 +45,8 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
           }}
         >
           <Skeleton className="w-full h-full rounded-lg" isLoaded={imageLoaded}>
-            <img
-              alt={`Project image ${activeIndex + 1}`}
+            <Image
+              alt={`Project ${activeIndex + 1}`}
               className="max-h-full max-w-full object-contain"
               style={{
                 display: "block",
@@ -55,6 +56,8 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
               }}
               loading="lazy"
               src={images[activeIndex]}
+              width={800}
+              height={600}
               onLoad={() => setImageLoaded(true)}
             />
             <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-white bg-black/60 px-3 py-1 rounded opacity-80 group-hover:opacity-100 pointer-events-none select-none transition">
@@ -77,11 +80,13 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
             }
           }}
         >
-          <img
-            alt={`Project image fullscreen ${activeIndex + 1}`}
+          <Image
+            alt={`Project fullscreen ${activeIndex + 1}`}
             className="max-h-[95vh] max-w-[95vw] object-contain shadow-2xl"
             src={images[activeIndex]}
             style={{ background: "black" }}
+            width={1200}
+            height={900}
           />
         </div>
       )}
@@ -104,11 +109,13 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
               }
             }}
           >
-            <img
+            <Image
               alt={`Thumbnail ${index + 1}`}
               className="w-full h-full object-contain"
               loading="lazy"
               src={img}
+              width={100}
+              height={100}
             />
           </motion.div>
         ))}
