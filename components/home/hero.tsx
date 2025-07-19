@@ -32,7 +32,15 @@ export const HeroSection = ({
   return (
     <section className="min-h-[calc(100vh-64px)] flex items-center justify-center relative overflow-hidden bg-background">
       {showBackground && <Hole />}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-transparent" style={{backgroundImage: 'url("/images/home-bg.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0}} />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-transparent"
+        style={{
+          backgroundImage: 'url("/images/home-bg.jpg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          zIndex: 0,
+        }}
+      />
       <div className="container mx-auto px-4 z-10">
         <motion.div
           animate={{ opacity: 1, y: 0 }}

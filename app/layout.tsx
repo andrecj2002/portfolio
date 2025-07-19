@@ -1,4 +1,4 @@
-import "@/app/globals.css"
+import "@/app/globals.css";
 
 import { clsx } from "clsx";
 import { type Metadata } from "next";
@@ -82,7 +82,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <StarsBackground>{content}</StarsBackground>
         </Providers>
-
       </body>
     </html>
   );

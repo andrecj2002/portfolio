@@ -1,9 +1,6 @@
 "use client";
 
-import React, {
-    useState,
-    useCallback,
-} from "react";
+import React, { useState, useCallback } from "react";
 import { addToast } from "@heroui/react";
 import emailjs from "@emailjs/browser";
 
@@ -32,13 +29,17 @@ const ContactPage: React.FC = () => {
 
       const missingVars = Object.entries(EMAIL_CONFIG)
         .filter(([_, value]) => !value)
-        .map(([key]) => `NEXT_PUBLIC_EMAILJS_${key.toUpperCase().replace(/([A-Z])/g, "_$1")}`);
+        .map(
+          ([key]) =>
+            `NEXT_PUBLIC_EMAILJS_${key.toUpperCase().replace(/([A-Z])/g, "_$1")}`,
+        );
 
       if (missingVars.length > 0) {
         console.error("Email configuration is incomplete:", missingVars);
         addToast({
           title: "Failed to Send Message",
-          description: "Email configuration is incomplete. Please check environment variables.",
+          description:
+            "Email configuration is incomplete. Please check environment variables.",
           color: "danger",
         });
         setState((prev) => ({ ...prev, isSubmitting: false }));
@@ -64,8 +65,7 @@ const ContactPage: React.FC = () => {
         setState((prev) => ({ ...prev, isSuccess: true }));
         addToast({
           title: "Message Sent Successfully",
-          description:
-            "Thank you for your message! I'll get back to you soon.",
+          description: "Thank you for your message! I'll get back to you soon.",
           color: "success",
         });
       } catch (error) {

@@ -11,7 +11,6 @@ export const ContactMap: React.FC<ContactMapProps> = ({
   src,
   className = "",
 }) => {
-
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 

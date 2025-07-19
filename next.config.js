@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
-const isGithubPages = process.env.GITHUB_PAGES === 'true';
+const isGithubPages = process.env.GITHUB_PAGES === "true";
 
 const nextConfig = {
-  output: 'export',
+  output: "export",
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -16,8 +16,8 @@ const nextConfig = {
       },
     ],
   },
-  basePath: isGithubPages ? '/portfolio' : '',
-  assetPrefix: isGithubPages ? '/portfolio/' : '',
+  basePath: isGithubPages ? "/portfolio" : "",
+  assetPrefix: isGithubPages ? "/portfolio/" : "",
 };
 
 module.exports = nextConfig;

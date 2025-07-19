@@ -15,7 +15,10 @@ const ProjectsPage = () => {
   // Debug: Log project titles and order
   useEffect(() => {
     // eslint-disable-next-line no-console
-    console.log("Projects:", allProjects.map((p) => p.title));
+    console.log(
+      "Projects:",
+      allProjects.map((p) => p.title),
+    );
   }, [allProjects]);
 
   // Normalize categories for tab display and filtering
@@ -23,12 +26,13 @@ const ProjectsPage = () => {
     () => [
       "All",
       ...Array.from(
-        new Set(allProjects.map((project) => normalizeCategory(project.category))),
+        new Set(
+          allProjects.map((project) => normalizeCategory(project.category)),
+        ),
       ).map(
         (cat) =>
-          allProjects.find(
-            (p) => normalizeCategory(p.category) === cat,
-          )?.category || cat,
+          allProjects.find((p) => normalizeCategory(p.category) === cat)
+            ?.category || cat,
       ),
     ],
     [allProjects],

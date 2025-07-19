@@ -38,7 +38,7 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
           role="button"
           tabIndex={0}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+            if (e.key === "Enter" || e.key === " ") {
               handleImageClick();
             }
           }}
@@ -47,7 +47,12 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
             <img
               alt={`Project image ${activeIndex + 1}`}
               className="max-h-full max-w-full object-contain"
-              style={{ display: 'block', margin: '0 auto', maxHeight: '100%', maxWidth: '100%' }}
+              style={{
+                display: "block",
+                margin: "0 auto",
+                maxHeight: "100%",
+                maxWidth: "100%",
+              }}
               loading="lazy"
               src={images[activeIndex]}
               onLoad={() => setImageLoaded(true)}
@@ -67,7 +72,7 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
           role="button"
           tabIndex={0}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+            if (e.key === "Enter" || e.key === " ") {
               handleCloseFullscreen();
             }
           }}
@@ -76,7 +81,7 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
             alt={`Project image fullscreen ${activeIndex + 1}`}
             className="max-h-[95vh] max-w-[95vw] object-contain shadow-2xl"
             src={images[activeIndex]}
-            style={{ background: 'black' }}
+            style={{ background: "black" }}
           />
         </div>
       )}
@@ -85,17 +90,16 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
         {images.map((img, index) => (
           <motion.div
             key={img}
-            className={`w-15 h-19 md:w-20 md:h-20 rounded-lg overflow-hidden cursor-pointer border-2 ${index === activeIndex
-              ? "border-blue-500"
-              : "border-transparent"
-              }`}
+            className={`w-15 h-19 md:w-20 md:h-20 rounded-lg overflow-hidden cursor-pointer border-2 ${
+              index === activeIndex ? "border-blue-500" : "border-transparent"
+            }`}
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.05 }}
             onClick={() => handleThumbnailClick(index)}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
+              if (e.key === "Enter" || e.key === " ") {
                 handleThumbnailClick(index);
               }
             }}

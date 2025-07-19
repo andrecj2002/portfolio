@@ -218,9 +218,7 @@ export const DATA = {
         description:
           "An interactive project about Smart Cities where users can interact with various items to learn curiosities.",
         image: "/images/blog-image3.png",
-        gallery: [
-          "/images/blog-image3.png",
-        ],
+        gallery: ["/images/blog-image3.png"],
         category: "Web Development",
         details:
           "Smart Village is a basic interactive project created to test and demonstrate JavaScript skills. The application allows users to interact with various items in a virtual village setting, and when clicked, displays interesting facts and curiosities about Smart Cities related to the selected object. This project showcases fundamental web development skills and interactive design principles.",
@@ -254,13 +252,22 @@ export const DATA = {
       location: "Aveiro, Portugal",
     },
     socialLinks: [
-      { platform: "GitHub", url: "https://github.com/andrecj2002", icon: "mdi:github" },
+      {
+        platform: "GitHub",
+        url: "https://github.com/andrecj2002",
+        icon: "mdi:github",
+      },
       {
         platform: "LinkedIn",
         url: "https://linkedin.com",
         icon: "mdi:linkedin",
       },
     ],
-    services: ["Web Development", "UI/UX Design", "Content Creation", "Web Development"],
+    services: [
+      "Web Development",
+      "UI/UX Design",
+      "Content Creation",
+      "Web Development",
+    ],
   },
 } as const;

@@ -1,7 +1,5 @@
 "use client";
 
-
-
 // Remove or comment out the TestimonialsSection export since DATA.home.testimonials was deleted
 // export const TestimonialsSection = () => {
 //   const { sectionTitle, sectionDescription, items } = DATA.home.testimonials;

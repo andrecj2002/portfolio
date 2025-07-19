@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-export const LogoBranco = ({ className = "", size = 48 }: { className?: string; size?: number }) => (
+export const LogoBranco = ({
+  className = "",
+  size = 48,
+}: {
+  className?: string;
+  size?: number;
+}) => (
   <div
     className={`relative aspect-[1/1] ${className}`}
     style={{ width: size, height: size, minWidth: size, minHeight: size }}
