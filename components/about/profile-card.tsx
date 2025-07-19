@@ -27,7 +27,6 @@ export const ProfileCard = memo(function ProfileCard({
             <CardFooter className="absolute bg-black/50 bottom-0 z-10 border-t border-white/20">
               <div className="flex flex-col text-white">
                 <HighlightText className="text-lg font-semibold " text={name} />
-                <p className="text-sm text-white/80">{title}</p>
               </div>
             </CardFooter>
           </Card>
@@ -35,6 +34,7 @@ export const ProfileCard = memo(function ProfileCard({
 
         {/* Right Description */}
         <div className="text-muted-foreground text-sm leading-relaxed max-w-2xl px-6 py-4">
+          <p className="mb-2 font-bold text-lg text-primary-700">Full Stack Developer</p>
           {description.map((paragraph, index) => (
             <p key={index} className="mb-4">
               <SplittingText

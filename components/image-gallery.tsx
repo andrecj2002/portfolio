@@ -9,10 +9,19 @@ interface ImageGalleryProps {
 const ImageGallery = memo(({ images }: ImageGalleryProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
 
   const handleThumbnailClick = (index: number) => {
     setActiveIndex(index);
     setImageLoaded(false);
+  };
+
+  const handleImageClick = () => {
+    setFullscreen(true);
+  };
+
+  const handleCloseFullscreen = () => {
+    setFullscreen(false);
   };
 
   return (
@@ -21,10 +30,11 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
         <motion.div
           key={images[activeIndex]}
           animate={{ opacity: 1 }}
-          className="flex items-center justify-center w-full max-w-xl h-65 md:h-80 overflow-hidden rounded-xl bg-black"
+          className="flex items-center justify-center w-full max-w-xl h-80 md:h-[40vh] overflow-hidden rounded-xl bg-black cursor-pointer group"
           exit={{ opacity: 0 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
+          onClick={handleImageClick}
         >
           <Skeleton className="w-full h-full rounded-lg" isLoaded={imageLoaded}>
             <img
@@ -35,9 +45,27 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
               src={images[activeIndex]}
               onLoad={() => setImageLoaded(true)}
             />
+            <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-white bg-black/60 px-3 py-1 rounded opacity-80 group-hover:opacity-100 pointer-events-none select-none transition">
+              Click to view fullscreen
+            </span>
           </Skeleton>
         </motion.div>
       </AnimatePresence>
+
+      {/* Fullscreen overlay */}
+      {fullscreen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 cursor-zoom-out"
+          onClick={handleCloseFullscreen}
+        >
+          <img
+            alt={`Project image fullscreen ${activeIndex + 1}`}
+            className="max-h-[95vh] max-w-[95vw] object-contain shadow-2xl"
+            src={images[activeIndex]}
+            style={{ background: 'black' }}
+          />
+        </div>
+      )}
 
       <div className="flex gap-3">
         {images.map((img, index) => (

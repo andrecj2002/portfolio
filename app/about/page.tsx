@@ -1,12 +1,11 @@
 import { ProfileCard } from "@/components/about/profile-card";
 import { EducationTimeline } from "@/components/about/timelines/education-timeline";
-import { ExperienceTimeline } from "@/components/about/timelines/experience-timeline";
 import { Skills } from "@/components/about/skills";
 import { PageHeader } from "@/components/page-header";
 import { DATA } from "@/data";
 
 export default function AboutPage() {
-  const { education, experience, profile } = DATA.about;
+  const { education, profile, skills } = DATA.about;
   const tech = DATA.about.technologies;
 
   return (
@@ -18,9 +17,27 @@ export default function AboutPage() {
         name={profile.name}
         title={profile.title}
       />
-
       <EducationTimeline education={education} />
-      <ExperienceTimeline experience={experience} />
+      {/* Render skills list if present */}
+      {skills && Array.isArray(skills) && skills.length > 0 && (
+        <div className="mb-20">
+          <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <span className="inline-block bg-primary-500 text-white rounded-full px-3 py-1 text-sm">
+              Skills
+            </span>
+          </h3>
+          <ul className="flex flex-wrap gap-2">
+            {skills.map((skill) => (
+              <li
+                key={skill}
+                className="bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-200 px-3 py-1 rounded-full text-xs font-medium"
+              >
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <Skills tech={tech} />
     </section>
   );

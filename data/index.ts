@@ -39,48 +39,46 @@ export const DATA = {
     },
   },
   about: {
+    education: [
+      {
+        title: "Master's in Communication and Web Technologies",
+        date: "2024 - Present",
+        icon: "mdi:school",
+        description:
+          "Currently taking this master's degree to expand my knowledge in web programming and web development practices.",
+      },
+      {
+        title: "Bachelor's in Multimedia and Communication Technologies",
+        date: "2021 - 2024",
+        icon: "mdi:school-outline",
+        description:
+          "During this degree I was able to develop competences in UI/UX Research, Web Development languages (HTML5, CSS, PHP, MySQL, JavaScript – React), some camera and photography work, and web services and data.",
+      },
+    ],
     profile: {
       name: "André Jorge",
       title: "Full Stack Developer",
-      image:
-        "https://res.cloudinary.com/devq06psf/image/upload/v1750626859/chic_soba_apc1ht.png",
+      image: "/images/foto_perfil.jpg",
       description: [
-        "I'm André Jorge, a 3rd year student of Multimedia and Communication Technologies at the University of Aveiro. I found my passion for coding in high school, and thanks to what I learned during my course, I was able to appreciate it even more!",
+        "I'm André Jorge, currently taking a Master's degree in Communication and Web Technologies at the University of Aveiro. I found my passion for coding in high school, and thanks to what I learned during my course, I was able to appreciate it even more!",
         "My approach is both technical and aesthetic — I enjoy turning complex problems into elegant user experiences. I work primarily with modern frameworks like React, JavaScript, and various web technologies.",
         "What I love to do the most is playing videogames, listening to music and jogging! Outside of code, I enjoy content creation and always pushing the boundaries of front-end development. It's nice to meet you!",
       ],
     },
-    education: [
-      {
-        title: "Multimedia and Communication Technologies",
-        date: "2021 - 2024",
-        icon: "mdi:school",
-        description:
-          "Pursued a Bachelor's degree in Multimedia and Communication Technologies at the University of Aveiro. Gained strong skills in web development, UI/UX design, content creation, and digital communication.",
-      },
-      {
-        title: "High School Education",
-        date: "2024 - 2026",
-        icon: "mdi:school-outline",
-        description:
-          "Completed high school education where I first discovered my passion for coding and technology. This foundational period sparked my interest in programming and digital design.",
-      },
-    ],
-    experience: [
-      {
-        title: "Student Developer",
-        date: "2022 - Present",
-        icon: "mdi:school",
-        description:
-          "Currently studying and working on various projects as part of my Multimedia and Communication Technologies degree. Developing skills in web development, UI/UX design, and content creation through academic and personal projects.",
-      },
-      {
-        title: "Personal Projects & Learning",
-        date: "2020 - Present",
-        icon: "mdi:code-tags",
-        description:
-          "Continuously learning and building personal projects to improve my coding skills. Started with basic web development and gradually moved to more complex applications using JavaScript, React, and various web technologies.",
-      },
+    skills: [
+      "Scrum",
+      "Software Development",
+      "Figma",
+      "End User Research",
+      "User Experience (UX)",
+      "HTML5",
+      "JavaScript",
+      "Camera Operation",
+      "UI design",
+      "Back-End Web Development",
+      "Cameras",
+      "Mobile Interface Design",
+      "User Research",
     ],
     technologies: {
       frontend: {
@@ -146,7 +144,7 @@ export const DATA = {
         id: 1,
         title: "CosmoZone",
         description:
-          "A program that allows you to manage, add and edit events as well as interaction from a comments tab.",
+          "A program that allows you to manage, add and edit events as well as interaction from a comments tab. Developed under Context Based Learning (CBL) at Universidade de Aveiro in collaboration with Planetário do Porto. Usability tests were conducted with real users to verify and improve the UI experience.",
         image: "/images/cosmozone_cover.png",
         gallery: [
           "/images/cosmozone_1.png",
@@ -156,7 +154,7 @@ export const DATA = {
         ],
         category: "Web Development",
         details:
-          "CosmoZone is a comprehensive event management system developed to help 'Centros de Ciência Viva' (Live Science Centers) in Portugal organize events and understand customer preferences. The platform includes event management capabilities, user interaction through comments, and an administrative area with statistical data regarding event preferences and user locations. Built with JavaScript, HTML, PHP, and styled with Bootstrap.",
+          "CosmoZone is a comprehensive event management system developed to help 'Centros de Ciência Viva' (Live Science Centers) in Portugal organize events and understand customer preferences. The platform was developed under Context Based Learning (CBL) at Universidade de Aveiro in collaboration with Planetário do Porto. The platform includes event management capabilities, user interaction through comments, and an administrative area with statistical data regarding event preferences and user locations. Usability tests were conducted with real users to verify and improve the UI experience. Built with JavaScript, HTML, PHP, and styled with Bootstrap.",
         github: "https://github.com",
         live: "https://example.com",
         tech: [
@@ -170,17 +168,18 @@ export const DATA = {
         id: 4,
         title: "BetLearn",
         description:
-          "A sandbox app that teaches users how to bet before they go to an actual existing betting sports house.",
-        image: "https://img.heroui.chat/image/dashboard?w=600&h=400&u=4",
+          "A sandbox app that teaches users how to bet before they go to an actual existing betting sports house. Developed under Context Based Learning (CBL) at Universidade de Aveiro in collaboration with Blip. Usability tests were conducted with real users to verify and improve the UI experience.",
+        image: "/images/betlearn_1.png",
         gallery: [
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=4",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=4-1",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=4-2",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=4-3",
+          "/images/betlearn_1.png",
+          "/images/betlearn_2.png",
+          "/images/betlearn_3.png",
+          "/images/betlearn_4.png",
+          "/images/betlearn_5.png",
         ],
         category: "Mobile Development",
         details:
-          "BetLearn is an educational mobile application designed to teach users about sports betting in a safe, simulated environment. The app provides a sandbox experience where users can learn betting strategies, understand odds, and practice decision-making before engaging with real betting platforms. Built with React Native, TypeScript, and Expo Go for cross-platform compatibility.",
+          "BetLearn is an educational mobile application designed to teach users about sports betting in a safe, simulated environment. The app was developed under Context Based Learning (CBL) at Universidade de Aveiro in collaboration with Blip. The app provides a sandbox experience where users can learn betting strategies, understand odds, and practice decision-making before engaging with real betting platforms. Usability tests were conducted with real users to verify and improve the UI experience. Built with React Native, TypeScript, and Expo Go for cross-platform compatibility.",
         github: "https://github.com",
         live: "https://example.com",
         tech: [
@@ -218,12 +217,9 @@ export const DATA = {
         title: "Smart Village",
         description:
           "An interactive project about Smart Cities where users can interact with various items to learn curiosities.",
-        image: "https://img.heroui.chat/image/dashboard?w=600&h=400&u=3",
+        image: "/images/blog-image3.png",
         gallery: [
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=3",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=3-1",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=3-2",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=3-3",
+          "/images/blog-image3.png",
         ],
         category: "Web Development",
         details:
