@@ -7,7 +7,7 @@ export const DATA = {
         "Hi! I'm a Full Stack Developer at Universidade de Aveiro. I build fast, accessible and visually engaging web experiences.",
     },
     skills: {
-      sectionTitle: "Skills & Expertise",
+      sectionTitle: "What I Use",
       sectionDescription:
         "Specialized in creating modern digital experiences with cutting-edge technologies",
       overview: [
@@ -97,11 +97,11 @@ export const DATA = {
       },
       backend: {
         description:
-          "I build fast APIs and scalable backends using Node.js, Bun, and Python.",
+          "I build fast APIs and scalable backends using Node.js, Prisma, and Postman.",
         tools: [
           { name: "Node.js", icon: "logos:nodejs-icon" },
-          { name: "Bun", icon: "logos:bun" },
-          { name: "Python", icon: "logos:python" },
+          { name: "Prisma", icon: "simple-icons:prisma" },
+          { name: "Postman", icon: "simple-icons:postman" },
           { name: "MySQL", icon: "logos:mysql-icon" },
           { name: "PostgresSQL", icon: "logos:postgresql" },
           { name: "OpenAI", icon: "simple-icons:openai" },
@@ -118,17 +118,16 @@ export const DATA = {
       },
       graphicDesign: {
         description:
-          "My graphic work includes logos, branding, and posters using Adobe Suite.",
+          "My graphic work includes logos, branding, and posters using Figma.",
         tools: [
-          { name: "Photoshop", icon: "logos:adobe-photoshop" },
-          { name: "Illustrator", icon: "logos:adobe-illustrator" },
+          { name: "Figma", icon: "logos:figma" },
         ],
       },
-      motionDesign: {
+      videoAndAnimationProduction: {
         description:
-          "I animate UI flows and cinematic intros using After Effects and Blender.",
+          "I edit and produce videos and animations using Vegas and Blender.",
         tools: [
-          { name: "After Effects", icon: "logos:adobe-after-effects" },
+          { name: "Vegas", icon: "simple-icons:vegas" },
           { name: "Premiere Pro", icon: "logos:adobe-premiere" },
           { name: "Blender", icon: "logos:blender" },
         ],

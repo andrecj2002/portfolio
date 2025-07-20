@@ -19,7 +19,7 @@ export const Skills = ({ tech }: SkillsProps) => (
     viewport={{ once: true }}
     whileInView={{ opacity: 1, y: 0 }}
   >
-    <SectionHeader icon="mdi:tools" title="Skills" />
+    <SectionHeader icon="mdi:tools" title="What I Use" />
 
     <Accordion selectionMode="multiple" variant="bordered">
       {Object.entries(tech).map(([category, { description, tools }]) => (
