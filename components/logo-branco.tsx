@@ -3,17 +3,25 @@ import Image from "next/image";
 export const LogoBranco = ({
   className = "",
   size = 48,
+  height = size,
 }: {
   className?: string;
   size?: number;
+  height?: number;
 }) => (
   <div
-    className={`relative aspect-[1/1] ${className}`}
-    style={{ width: size, height: size, minWidth: size, minHeight: size }}
+    className={`relative ${className}`}
+    style={{
+      width: size,
+      height,
+      minWidth: size,
+      minHeight: height,
+    }}
   >
     <Image
       src="/images/Logo_Branco.svg"
       alt="André Jorge Logo"
+      className="invert dark:invert-0"
       fill
       style={{ objectFit: "contain" }}
       priority

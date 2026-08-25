@@ -2,7 +2,6 @@
 
 import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
 
 import { DATA } from "@/data";
 
@@ -11,13 +10,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-content1 py-12">
-      <motion.div
-        className="container mx-auto px-4"
-        initial={{ opacity: 0, y: 40 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        whileInView={{ opacity: 1, y: 0 }}
-      >
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">Let&apos;s Connect</h3>
@@ -31,7 +24,11 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <Button isIconOnly variant="light">
+                  <Button
+                    isIconOnly
+                    className="text-foreground transition-colors hover:bg-white hover:!text-black dark:text-white"
+                    variant="light"
+                  >
                     <Icon className="w-5 h-5" icon={social.icon} />
                   </Button>
                 </a>
@@ -49,11 +46,16 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-foreground-600">
-              <li className="flex items-center gap-2">
+              <li className="flex min-w-0 items-start gap-2">
                 <Icon icon="lucide:mail" />
-                <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                <a
+                  className="min-w-0 break-all"
+                  href={`mailto:${contact.email}`}
+                >
+                  {contact.email}
+                </a>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 break-words">
                 <Icon icon="lucide:phone" />
                 <a href={`tel:${contact.phone}`}>{contact.phone}</a>
               </li>
@@ -69,7 +71,7 @@ export const Footer = () => {
             © {new Date().getFullYear()} {name}. made with &hearts;.
           </p>
         </div>
-      </motion.div>
+      </div>
     </footer>
   );
 };

@@ -19,7 +19,7 @@ export const ThemeSwitcher = () => {
       <Button
         isIconOnly
         aria-label="Toggle theme"
-        className="text-foreground"
+        className="text-foreground transition-colors hover:bg-white hover:!text-black dark:text-white"
         variant="light"
         onPress={() => setTheme(isDark ? "light" : "dark")}
       >

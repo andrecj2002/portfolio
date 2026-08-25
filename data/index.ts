@@ -3,37 +3,43 @@ export const DATA = {
     hero: {
       name: "André Jorge",
       title: "Full Stack Developer & UI/UX Designer",
-      subtitle:
-        "Hi! I'm a Full Stack Developer at Universidade de Aveiro. I build fast, accessible and visually engaging web experiences.",
+      subtitle: "Hi! I'm a Full Stack Developer.",
     },
     skills: {
       sectionTitle: "What I Use",
-      sectionDescription:
-        "Specialized in creating modern digital experiences with cutting-edge technologies",
+      sectionDescription: "Technologies I use to build my projects",
       overview: [
         {
-          name: "Web Development",
-          level: 100,
-          icon: "lucide:code",
-          color: "primary",
+          name: "JavaScript",
+          icon: "logos:javascript",
         },
         {
-          name: "UI/UX Design",
-          level: 100,
-          icon: "lucide:layout-dashboard",
-          color: "secondary",
+          name: "React.js",
+          icon: "logos:react",
         },
         {
-          name: "Mobile Development",
-          level: 95,
-          icon: "lucide:smartphone",
-          color: "success",
+          name: "Vue.js",
+          icon: "logos:vue",
         },
         {
-          name: "Content Creation",
-          level: 80,
-          icon: "lucide:video",
-          color: "warning",
+          name: "Next.js",
+          icon: "skill-icons:nextjs-dark",
+        },
+        {
+          name: "Node.js",
+          icon: "logos:nodejs-icon",
+        },
+        {
+          name: "React Native (Expo)",
+          icon: "logos:react",
+        },
+        {
+          name: "PHP",
+          icon: "logos:php",
+        },
+        {
+          name: "MySQL",
+          icon: "logos:mysql-icon",
         },
       ],
     },
@@ -60,76 +66,49 @@ export const DATA = {
       title: "Full Stack Developer",
       image: "/images/foto_perfil.jpg",
       description: [
-        "I'm André Jorge, currently taking a Master's degree in Communication and Web Technologies at the University of Aveiro. I found my passion for coding in high school, and thanks to what I learned during my course, I was able to appreciate it even more!",
-        "My approach is both technical and aesthetic — I enjoy turning complex problems into elegant user experiences. I work primarily with modern frameworks like React, JavaScript, and various web technologies.",
-        "What I love to do the most is playing videogames, listening to music and jogging! Outside of code, I enjoy content creation and always pushing the boundaries of front-end development. It's nice to meet you!",
+        "I'm André Jorge, a Full-Stack Developer with a strong front-end focus, currently pursuing a Master's degree in Communication and Web Technologies at the University of Aveiro.",
+        "I build production-ready web and mobile applications with JavaScript ecosystems including React, Vue.js, Nuxt.js, Next.js, Node.js, and React Native with Expo.",
+        "My work also includes REST APIs, API integration, relational databases, and user-centred UI/UX development using Agile and SCRUM methodologies.",
       ],
     },
-    skills: [
-      "Scrum",
-      "Software Development",
-      "Figma",
-      "End User Research",
-      "User Experience (UX)",
-      "HTML5",
-      "JavaScript",
-      "Camera Operation",
-      "UI design",
-      "Back-End Web Development",
-      "Cameras",
-      "Mobile Interface Design",
-      "User Research",
-    ],
     technologies: {
-      frontend: {
+      development: {
         description:
-          "I craft dynamic, responsive UIs using modern JavaScript frameworks and CSS tools.",
+          "Web technologies and frameworks I use in application development.",
         tools: [
-          { name: "React", icon: "logos:react" },
-          { name: "Next.js", icon: "skill-icons:nextjs-dark" },
-          { name: "React Native", icon: "logos:react" },
-          { name: "Expo", icon: "simple-icons:expo" },
-          { name: "Tailwind", icon: "logos:tailwindcss-icon" },
-          { name: "TypeScript", icon: "logos:typescript-icon" },
           { name: "HTML5", icon: "logos:html-5" },
-          { name: "CSS3", icon: "logos:css-3" },
-        ],
-      },
-      backend: {
-        description:
-          "I build fast APIs and scalable backends using Node.js, Prisma, and Postman.",
-        tools: [
+          { name: "CSS", icon: "logos:css-3" },
+          { name: "JavaScript", icon: "logos:javascript" },
+          { name: "React.js", icon: "logos:react" },
+          { name: "Vue.js", icon: "logos:vue" },
+          { name: "Nuxt.js", icon: "logos:nuxt-icon" },
+          { name: "Next.js", icon: "skill-icons:nextjs-dark" },
           { name: "Node.js", icon: "logos:nodejs-icon" },
-          { name: "Prisma", icon: "simple-icons:prisma" },
-          { name: "Postman", icon: "simple-icons:postman" },
+          { name: "React Native (Expo)", icon: "logos:react" },
+          { name: "PHP", icon: "logos:php" },
+          { name: "WordPress", icon: "logos:wordpress-icon" },
+        ],
+      },
+      backendAndData: {
+        description:
+          "Backend technologies for APIs, integrations, and relational data.",
+        tools: [
+          { name: "REST", icon: "lucide:route" },
+          { name: "API Design", icon: "lucide:waypoints" },
+          { name: "API Integration", icon: "lucide:plug-zap" },
           { name: "MySQL", icon: "logos:mysql-icon" },
-          { name: "PostgresSQL", icon: "logos:postgresql" },
-          { name: "OpenAI", icon: "simple-icons:openai" },
+          { name: "PostgreSQL", icon: "logos:postgresql" },
+          { name: "Postman", icon: "simple-icons:postman" },
         ],
       },
-      ux: {
+      designAndDelivery: {
         description:
-          "I design smooth, user-centered interfaces and high-fidelity prototypes.",
+          "Tools I use for interface design, media production, and delivery.",
         tools: [
           { name: "Figma", icon: "logos:figma" },
-          { name: "Framer", icon: "simple-icons:framer", color: "#0055FF" },
-          { name: "Notion", icon: "logos:notion-icon" },
-        ],
-      },
-      graphicDesign: {
-        description:
-          "My graphic work includes logos, branding, and posters using Figma.",
-        tools: [
-          { name: "Figma", icon: "logos:figma" },
-        ],
-      },
-      videoAndAnimationProduction: {
-        description:
-          "I edit and produce videos and animations using Vegas and Blender.",
-        tools: [
           { name: "Vegas", icon: "simple-icons:vegas" },
-          { name: "Premiere Pro", icon: "logos:adobe-premiere" },
-          { name: "Blender", icon: "logos:blender" },
+          { name: "DaVinci Resolve", icon: "lucide:film" },
+          { name: "GitHub CI/CD", icon: "simple-icons:github" },
         ],
       },
     },
@@ -179,8 +158,8 @@ export const DATA = {
         category: "Mobile Development",
         details:
           "BetLearn is an educational mobile application designed to teach users about sports betting in a safe, simulated environment. The app was developed under Context Based Learning (CBL) at Universidade de Aveiro in collaboration with Blip. The app provides a sandbox experience where users can learn betting strategies, understand odds, and practice decision-making before engaging with real betting platforms. Usability tests were conducted with real users to verify and improve the UI experience. Built with React Native, TypeScript, and Expo Go for cross-platform compatibility.",
-        github: "https://github.com",
-        live: "https://example.com",
+        promoPage: "https://betlearn.vercel.app/#",
+        promoVideo: "https://www.youtube.com/watch?v=9jl0bZ2ucjE",
         tech: [
           { name: "React Native", icon: "logos:react" },
           { name: "TypeScript", icon: "logos:typescript-icon" },
@@ -188,46 +167,76 @@ export const DATA = {
         ],
       },
       {
-        id: 2,
-        title: "PokéBase",
+        id: 5,
+        title: "Chat-Bot for TechLab",
         description:
-          "A project to simulate decks from the Pokémon TCG game with Firebase authentication and API integration.",
-        image: "/images/pokebox.png",
-        gallery: [
-          "/images/pokebox.png",
-          "/images/pokebox_1.png",
-          "/images/pokebox_2.png",
-          "/images/pokebox_3.png",
-        ],
+          "A chatbot created to support TechLab services at PCI (Parque de Ciência e Inovação de Aveiro), with two conversation flows for discovering services and exploring ideas. Supports Portuguese and English, with conversation history, document attachments, and PDF summaries.",
+        image: "/images/Frame.png",
+        detailImage: "/images/Adobe Express - Timeline 1.gif",
+        gallery: ["/images/ChatDefault 2.png", "/images/ChatDefault 3.png"],
+        galleryLabels: [undefined, "UI prototypes", "UI prototypes"],
         category: "Web Development",
         details:
-          "PokéBase is a personal project that simulates Pokémon TCG decks. Features include Firebase authentication allowing each account to have its own deck, deck comparison functionality, and integration with Pokémon-specific APIs (PokéTCG and Pokémon Database) to search for Pokémon and relate them to their respective TCG cards. Built with React and modern web technologies.",
-        github: "https://github.com",
-        live: "https://example.com",
+          "Chat-Bot TechLab is a chatbot developed to support the services of TechLab at PCI (Parque de Ciência e Inovação de Aveiro). It includes two different conversation flows: Route A for getting to know TechLab's services and Route B for exploring ideas. The chatbot supports Portuguese and English, uses Claude Haiku 4.5, generates PDF summaries of conversations, sends PDFs directly by email, and allows users to save and load previous conversations as well as attach documents. Built with Next.js, TypeScript, React hooks, Tailwind CSS, jsPDF, and Mailgun.",
+        github: "https://github.com/andrecj2002/chat-bot-techlab",
+        live: "https://chat-bot-techlab.vercel.app",
         tech: [
+          { name: "Next.js", icon: "skill-icons:nextjs-dark" },
+          { name: "TypeScript", icon: "logos:typescript-icon" },
           { name: "React", icon: "logos:react" },
-          { name: "JavaScript", icon: "logos:javascript" },
-          { name: "Firebase", icon: "logos:firebase" },
-          { name: "Bootstrap", icon: "logos:bootstrap" },
+          { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+          { name: "jsPDF", icon: "lucide:file-text" },
+          { name: "Mailgun", icon: "lucide:mail" },
         ],
       },
       {
-        id: 3,
-        title: "Smart Village",
+        id: 6,
+        title: "Greener Acts",
         description:
-          "An interactive project about Smart Cities where users can interact with various items to learn curiosities.",
-        image: "/images/blog-image3.png",
-        gallery: ["/images/blog-image3.png"],
-        category: "Web Development",
+          "A sustainability-focused app where companies commit to one of the 17 SDGs by organizing events aligned with those objectives. This project was developed during my internship at PCI – Parque de Ciência e Inovação de Aveiro, as a service for the company Greener Acts.",
+        image: "/images/greener acts cover (2).png",
+        detailImage: "/images/events_final.gif",
+        gallery: ["/images/commitments_final.gif"],
+        category: "UI/UX Design",
         details:
-          "Smart Village is a basic interactive project created to test and demonstrate JavaScript skills. The application allows users to interact with various items in a virtual village setting, and when clicked, displays interesting facts and curiosities about Smart Cities related to the selected object. This project showcases fundamental web development skills and interactive design principles.",
-        github: "https://github.com",
-        live: "https://example.com",
+          "Greener Acts is a platform that helps companies turn sustainability goals into concrete actions by committing to one of the 17 UN Sustainable Development Goals through aligned initiatives and events. This project was developed during my internship at PCI (Parque de Ciência e Inovação de Aveiro) and delivered as a service for the company with the same name, Greener Acts. I was asked to redesign two back-office pages - Commitments and Events - while respecting an already established design system in Figma. The redesign process was documented across three phases: original state, low-fidelity exploration, and final UI.",
+        uiuxCaseStudy: {
+          summary:
+            "Below is the redesign journey for both back-office pages across Original, Lo-Fi, and Final phases.",
+          phases: [
+            {
+              name: "Original",
+              results: [
+                { page: "Commitments", image: "/images/commitments_og.png" },
+                { page: "Events", image: "/images/eventos_og.gif" },
+              ],
+            },
+            {
+              name: "Lo-Fi",
+              results: [
+                {
+                  page: "Commitments",
+                  image: "/images/commitments_lofi.gif",
+                },
+                { page: "Events", image: "/images/eventos_lofi.gif" },
+              ],
+            },
+            {
+              name: "Final",
+              results: [
+                {
+                  page: "Commitments",
+                  image: "/images/commitments_final.gif",
+                },
+                { page: "Events", image: "/images/events_final.gif" },
+              ],
+            },
+          ],
+        },
         tech: [
-          { name: "JavaScript", icon: "logos:javascript" },
-          { name: "HTML5", icon: "logos:html-5" },
-          { name: "CSS3", icon: "logos:css-3" },
-          { name: "Bootstrap", icon: "logos:bootstrap" },
+          { name: "Figma", icon: "logos:figma" },
+          { name: "Design System", icon: "lucide:palette" },
+          { name: "UI/UX", icon: "lucide:layout-template" },
         ],
       },
     ],

@@ -9,7 +9,6 @@ import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navbar";
 import { PageWrapper } from "@/components/page-wrapper";
 import { Providers } from "@/app/providers";
-import { StarsBackground } from "@/components/backgrounds/stars";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -59,7 +58,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   const content = (
-    <main className="bg-background min-h-screen bg-gradient-to-b from-background to-content2">
+    <main className="bg-background min-h-screen">
       <Navigation />
       <PageWrapper>{children}</PageWrapper>
       <Footer />
@@ -80,7 +79,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             defaultTheme: "dark",
           }}
         >
-          <StarsBackground>{content}</StarsBackground>
+          {content}
         </Providers>
       </body>
     </html>

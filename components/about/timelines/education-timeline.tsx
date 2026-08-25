@@ -22,7 +22,7 @@ export const EducationTimeline = ({ education }: EducationTimelineProps) => (
       viewport={{ once: true, amount: 0.2 }}
       whileInView="visible"
     >
-      <div className="absolute top-2 left-2 bottom-0 w-px bg-primary-500" />
+      <div className="absolute top-2 left-2 bottom-0 w-px bg-white" />
       {education.map((item, idx) => (
         <TimelineItem
           key={idx}

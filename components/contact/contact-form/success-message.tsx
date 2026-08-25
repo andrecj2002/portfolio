@@ -46,9 +46,9 @@ export const SuccessMessage: React.FC<{ onReset: () => void }> = ({
             >
               <Button
                 aria-label="Send another message"
-                color="primary"
+                className="border border-foreground bg-transparent text-foreground shadow-none transition-colors hover:bg-white hover:!text-black dark:border-white dark:text-white"
                 startContent={<Icon icon="lucide:plus" />}
-                variant="flat"
+                variant="bordered"
                 onPress={onReset}
               >
                 Send Another Message

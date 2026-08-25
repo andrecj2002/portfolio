@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 
 import { PageHeader } from "@/components/page-header";
 import { ProjectsTabs } from "@/components/projects/projects-tabs";
@@ -12,15 +12,6 @@ const normalizeCategory = (cat: string) => cat.trim().toLowerCase();
 const ProjectsPage = () => {
   const allProjects = DATA.projects.work;
 
-  // Debug: Log project titles and order
-  useEffect(() => {
-    console.log(
-      "Projects:",
-      allProjects.map((p) => p.title),
-    );
-  }, [allProjects]);
-
-  // Normalize categories for tab display and filtering
   const categories = useMemo(
     () => [
       "All",

@@ -1,67 +1,66 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Card, CardBody, Progress } from "@heroui/react";
+import Link from "next/link";
+import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
 
-import { GradientText } from "@/components/textAnimations/gradient-text";
+import { OrbitingCircles } from "@/components/orbiting-circles";
 import { DATA } from "@/data";
 
 export const SkillsOverviewSection = () => {
-  const overview = DATA.home.skills.overview;
   const { sectionTitle, sectionDescription } = DATA.home.skills;
+  const technologies = DATA.about.technologies;
 
   return (
     <section className="py-20 bg-content1">
       <div className="container mx-auto px-4">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <GradientText
-            className="text-3xl md:text-4xl font-bold mb-4 gradient"
-            text={sectionTitle}
-          />
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            {sectionTitle}
+          </h2>
           <p className="text-foreground-600 text-lg max-w-2xl mx-auto">
             {sectionDescription}
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {overview.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              transition={{ delay: index * 0.1, duration: 0.8 }}
-              viewport={{ once: true }}
-              whileInView={{ opacity: 1, x: 0 }}
-            >
-              <Card className="border-none shadow-md ">
-                <CardBody className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className={`p-3 rounded-full bg-${skill.color}-100`}>
-                      <Icon
-                        className={`w-6 h-6 text-${skill.color}-500`}
-                        icon={skill.icon}
-                      />
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+          {Object.entries(technologies).map(([category, { tools }]) => (
+            <div key={category} className="text-center">
+              <h3 className="mb-3 text-lg font-semibold">
+                {{
+                  backendAndData: "Backend & Data",
+                  designAndDelivery: "Design & Delivery",
+                  development: "Development",
+                }[category] ?? category}
+              </h3>
+              <div className="relative mx-auto h-64 w-full max-w-xs overflow-hidden">
+                <OrbitingCircles
+                  className="[&>div]:rounded-full [&>div]:bg-content1 [&>div]:p-2 [&>div]:shadow-sm"
+                  duration={24}
+                  iconSize={38}
+                  radius={88}
+                >
+                  {tools.map((tool) => (
+                    <div key={tool.name} title={tool.name}>
+                      <Icon className="h-6 w-6" icon={tool.icon} />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-semibold">{skill.name}</h3>
-                      <p className="text-foreground-600">{skill.level}%</p>
-                    </div>
-                  </div>
-                  <Progress
-                    className="h-2"
-                    color={skill.color}
-                    value={skill.level}
-                  />
-                </CardBody>
-              </Card>
-            </motion.div>
+                  ))}
+                </OrbitingCircles>
+              </div>
+            </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button
+            as={Link}
+            className="border border-white bg-white px-8 py-4 text-lg font-semibold text-black shadow-md transition-colors hover:bg-white hover:!text-black dark:border-white dark:bg-white dark:text-black"
+            href="/about#technologies"
+            size="lg"
+            variant="shadow"
+          >
+            View more
+          </Button>
         </div>
       </div>
     </section>

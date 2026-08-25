@@ -14,6 +14,7 @@ interface SkillsProps {
 
 export const Skills = ({ tech }: SkillsProps) => (
   <motion.div
+    id="technologies"
     initial={{ opacity: 0, y: 40 }}
     transition={{ duration: 0.6 }}
     viewport={{ once: true }}
@@ -21,35 +22,30 @@ export const Skills = ({ tech }: SkillsProps) => (
   >
     <SectionHeader icon="mdi:tools" title="What I Use" />
 
-    <Accordion selectionMode="multiple" variant="bordered">
+    <div className="space-y-10">
       {Object.entries(tech).map(([category, { description, tools }]) => (
-        <AccordionItem
-          key={category}
-          aria-label={category}
-          title={capitalize(category)}
-        >
+        <section key={category}>
+          <h3 className="mb-2 text-xl font-semibold">
+            {{
+              backendAndData: "Backend & Data",
+              designAndDelivery: "Design & Delivery",
+              development: "Development",
+            }[category] ?? capitalize(category)}
+          </h3>
           <p className="mb-4 text-sm text-muted-foreground">{description}</p>
-
-          <div className="relative h-[300px] w-full">
-            <OrbitingCircles
-              className="h-full w-full [&>div]:hover:scale-110 [&>div]:hover:text-primary-500"
-              duration={20}
-              radius={120}
-            >
-              {tools.map((tool) => (
-                <div key={tool.name}>
-                  <Icon
-                    className="transition-all duration-300"
-                    height={24}
-                    icon={tool.icon}
-                    width={24}
-                  />
-                </div>
-              ))}
-            </OrbitingCircles>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+            {tools.map((tool) => (
+              <div
+                key={tool.name}
+                className="flex min-h-20 items-center gap-3 rounded-lg border border-divider bg-content1 px-4 py-3 transition-colors hover:border-white"
+              >
+                <Icon className="h-7 w-7 shrink-0" icon={tool.icon} />
+                <span className="text-sm font-medium">{tool.name}</span>
+              </div>
+            ))}
           </div>
-        </AccordionItem>
+        </section>
       ))}
-    </Accordion>
+    </div>
   </motion.div>
 );

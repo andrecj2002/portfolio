@@ -13,6 +13,14 @@ export function cn(...inputs: ClassValue[]) {
 export const capitalize = (str: string) =>
   str.charAt(0).toUpperCase() + str.slice(1).replace(/([A-Z])/g, " $1");
 
+export const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
 export const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const validateEmail = (email: string): boolean => {

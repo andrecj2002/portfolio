@@ -5,8 +5,22 @@ export interface Project {
   readonly description: string;
   readonly details: string;
   readonly image: string;
+  readonly detailImage?: string;
+  readonly galleryLabels?: readonly (string | undefined)[];
   readonly github?: string;
   readonly live?: string;
+  readonly promoPage?: string;
+  readonly promoVideo?: string;
+  readonly uiuxCaseStudy?: {
+    summary?: string;
+    phases: readonly {
+      name: string;
+      results: readonly {
+        page: string;
+        image: string;
+      }[];
+    }[];
+  };
   readonly gallery: readonly string[];
   tech: readonly {
     name: string;
@@ -29,7 +43,7 @@ export interface ProjectsGridProps {
 export interface ProjectCardProps {
   project: Project;
   index?: number;
-  onViewDetails?: () => void;
+  href: string;
 }
 
 export interface ProjectModalProps {

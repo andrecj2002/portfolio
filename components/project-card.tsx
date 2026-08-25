@@ -1,36 +1,34 @@
 import { memo } from "react";
-import { Card, CardBody, CardFooter, Button, Image } from "@heroui/react";
-import { Icon } from "@iconify/react";
+import Link from "next/link";
+import Image from "next/image";
+import { Card, CardBody, CardFooter } from "@heroui/react";
 
 import { ProjectCardProps } from "@/components/projects/types";
 
 export const ProjectCard = memo(function ProjectCard({
   project,
-  onViewDetails,
+  href,
 }: ProjectCardProps) {
   return (
     <Card
+      as={Link}
+      href={href}
       isFooterBlurred
       isHoverable
       className="
         border-none bg-white/90 dark:bg-black/70
-        shadow-md dark:shadow-cyan-900/40
+        shadow-md dark:shadow-white/10
         rounded-xl overflow-hidden h-full w-full
         transition-colors
       "
       radius="lg"
     >
       <CardBody className="p-0 flex flex-col h-full">
-        <div className="relative w-full aspect-[16/10] bg-black">
+        <div className="relative w-full aspect-[16/10] bg-black overflow-hidden">
           <Image
-            isZoomed
-            removeWrapper
             alt={project.title}
-            className="absolute inset-0 w-full h-full object-contain"
-            classNames={{
-              img: "w-full h-full object-contain",
-              zoomedWrapper: "w-full h-full",
-            }}
+            className="object-contain"
+            fill
             loading="lazy"
             src={project.image}
           />
@@ -57,16 +55,10 @@ export const ProjectCard = memo(function ProjectCard({
           <p className="text-gray-700 dark:text-gray-300 mb-4 flex-grow text-sm leading-relaxed">
             {project.description}
           </p>
-          <Button
-            aria-label="View Details"
-            className="w-full md:w-auto border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition-colors"
-            color="primary"
-            endContent={<Icon icon="lucide:arrow-right" />}
-            variant="bordered"
-            onClick={onViewDetails}
-          >
+          <div className="inline-flex w-full md:w-auto items-center justify-center gap-2 rounded-medium border border-white px-4 py-2 text-sm text-white transition-colors hover:bg-white hover:!text-black">
             View Details
-          </Button>
+            <span aria-hidden="true">→</span>
+          </div>
         </div>
       </CardBody>
     </Card>

@@ -127,8 +127,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         <div className="flex flex-col gap-4">
           <Button
             aria-label="Sending"
-            className="w-full h-14 text-base font-medium"
-            color="primary"
+            className="w-full h-14 border border-foreground bg-transparent text-base font-medium text-foreground shadow-none transition-colors hover:bg-white hover:!text-black dark:border-white dark:text-white"
             isDisabled={!isValid || isSubmitting}
             isLoading={isSubmitting}
             size="lg"
@@ -138,13 +137,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({
               )
             }
             type="submit"
+            variant="bordered"
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
 
           <Button
             aria-label="Reset Form"
-            className="w-full h-14 text-base"
+            className="w-full h-14 border border-foreground bg-transparent text-base text-foreground transition-colors hover:bg-white hover:!text-black dark:border-white dark:text-white"
             color="default"
             isDisabled={isSubmitting}
             size="lg"

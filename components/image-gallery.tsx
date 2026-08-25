@@ -1,13 +1,13 @@
 import { memo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Skeleton } from "@heroui/react";
 import Image from "next/image";
 
 interface ImageGalleryProps {
   images: readonly string[];
+  imageLabels?: readonly (string | undefined)[];
 }
 
-const ImageGallery = memo(({ images }: ImageGalleryProps) => {
+const ImageGallery = memo(({ images, imageLabels }: ImageGalleryProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
@@ -31,7 +31,7 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
         <motion.div
           key={images[activeIndex]}
           animate={{ opacity: 1 }}
-          className="flex items-center justify-center w-full max-w-xl h-80 md:h-[40vh] overflow-hidden rounded-xl bg-black cursor-pointer group"
+          className="relative flex aspect-[4/3] w-full max-w-xl max-h-[70vh] items-center justify-center overflow-hidden rounded-xl bg-black cursor-pointer group sm:aspect-[16/10]"
           exit={{ opacity: 0 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
@@ -44,26 +44,19 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
             }
           }}
         >
-          <Skeleton className="w-full h-full rounded-lg" isLoaded={imageLoaded}>
-            <Image
-              alt={`Project ${activeIndex + 1}`}
-              className="max-h-full max-w-full object-contain"
-              style={{
-                display: "block",
-                margin: "0 auto",
-                maxHeight: "100%",
-                maxWidth: "100%",
-              }}
-              loading="lazy"
-              src={images[activeIndex]}
-              width={800}
-              height={600}
-              onLoad={() => setImageLoaded(true)}
-            />
-            <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-white bg-black/60 px-3 py-1 rounded opacity-80 group-hover:opacity-100 pointer-events-none select-none transition">
-              Click to view fullscreen
-            </span>
-          </Skeleton>
+          <Image
+            fill
+            alt={`Project ${activeIndex + 1}`}
+            className={`object-contain transition-opacity duration-300 ${
+              imageLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            loading="lazy"
+            src={images[activeIndex]}
+            onLoad={() => setImageLoaded(true)}
+          />
+          <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-white bg-black/60 px-3 py-1 rounded opacity-80 group-hover:opacity-100 pointer-events-none select-none transition">
+            Click to view fullscreen
+          </span>
         </motion.div>
       </AnimatePresence>
 
@@ -91,12 +84,17 @@ const ImageGallery = memo(({ images }: ImageGalleryProps) => {
         </div>
       )}
 
-      <div className="flex gap-3">
+      {imageLabels?.[activeIndex] && (
+        <p className="text-xs font-medium uppercase tracking-wider text-foreground-500">
+          {imageLabels[activeIndex]}
+        </p>
+      )}
+      <div className="flex flex-wrap justify-center gap-3">
         {images.map((img, index) => (
           <motion.div
             key={img}
-            className={`w-15 h-19 md:w-20 md:h-20 rounded-lg overflow-hidden cursor-pointer border-2 ${
-              index === activeIndex ? "border-blue-500" : "border-transparent"
+            className={`h-16 w-16 overflow-hidden rounded-lg border-2 cursor-pointer md:h-20 md:w-20 ${
+              index === activeIndex ? "border-white" : "border-transparent"
             }`}
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.05 }}
