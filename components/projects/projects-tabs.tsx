@@ -20,8 +20,8 @@ export const ProjectsTabs = ({
         variant="underlined"
         onSelectionChange={(key) => onSelectCategory(String(key))}
       >
-        {categories.map((category) => (
-          <Tab key={category} className="sm:text-base" title={category} />
+        {categories.map(({ key, label }) => (
+          <Tab key={key} className="sm:text-base" title={label} />
         ))}
       </Tabs>
     </div>

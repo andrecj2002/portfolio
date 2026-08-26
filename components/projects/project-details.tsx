@@ -222,6 +222,42 @@ export const ProjectDetails = ({ projectId }: ProjectDetailsProps) => {
         </section>
       )}
 
+      {project.stackTable && (
+        <section className="mt-12 space-y-5 rounded-2xl border border-white/10 bg-black/20 p-4 sm:p-6">
+          <h2 className="text-2xl font-semibold">{project.stackTable.title}</h2>
+
+          <div className="overflow-x-auto rounded-xl border border-white/15">
+            <table className="w-full border-collapse text-left">
+              <thead>
+                <tr className="bg-white/5">
+                  <th className="border-b border-white/15 px-4 py-3 font-semibold text-foreground">
+                    {project.stackTable.columns[0]}
+                  </th>
+                  <th className="border-b border-white/15 px-4 py-3 font-semibold text-foreground">
+                    {project.stackTable.columns[1]}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {project.stackTable.rows.map((row) => (
+                  <tr
+                    key={row.name}
+                    className="border-b border-white/10 last:border-b-0"
+                  >
+                    <td className="px-4 py-3 text-foreground-600">
+                      {row.name}
+                    </td>
+                    <td className="px-4 py-3 text-foreground-600">
+                      {row.description}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
+
       {fullscreenImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-3 sm:p-6"

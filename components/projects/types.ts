@@ -27,6 +27,11 @@ export interface Project {
       }[];
     }[];
   };
+  readonly stackTable?: {
+    title: string;
+    columns: readonly string[];
+    rows: readonly { name: string; description: string }[];
+  };
   readonly gallery: readonly string[];
   tech: readonly {
     name: string;
@@ -35,7 +40,7 @@ export interface Project {
 }
 
 export interface ProjectsTabsProps {
-  categories: readonly string[];
+  categories: readonly { key: string; label: string }[];
   selectedCategory: string;
   onSelectCategory: (category: string) => void;
   className?: string;

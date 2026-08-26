@@ -9,6 +9,7 @@ import { getData } from "@/data";
 import { useLocale } from "@/hooks/use-locale";
 
 const normalizeCategory = (cat: string) => cat.trim().toLowerCase();
+const ALL_KEY = "all";
 
 const ProjectsPage = () => {
   const { t, locale } = useLocale();
@@ -16,34 +17,32 @@ const ProjectsPage = () => {
 
   const categories = useMemo(
     () => [
-      t.projects.all,
+      { key: ALL_KEY, label: t.projects.all },
       ...Array.from(
         new Set(
           allProjects.map((project) => normalizeCategory(project.category)),
         ),
-      ).map(
-        (cat) =>
-          allProjects.find((p) => normalizeCategory(p.category) === cat)
-            ?.category || cat,
-      ),
+      ).map((key) => ({
+        key,
+        label:
+          allProjects.find((p) => normalizeCategory(p.category) === key)
+            ?.category || key,
+      })),
     ],
-    [allProjects],
+    [allProjects, t.projects.all],
   );
 
-  const [selectedCategory, setSelectedCategory] = useState<string>(
-    t.projects.all,
-  );
+  const [selectedCategory, setSelectedCategory] = useState<string>(ALL_KEY);
 
   const filteredProjects = useMemo(
     () =>
-      selectedCategory === t.projects.all
+      selectedCategory === ALL_KEY
         ? allProjects
         : allProjects.filter(
             (project) =>
-              normalizeCategory(project.category) ===
-              normalizeCategory(selectedCategory),
+              normalizeCategory(project.category) === selectedCategory,
           ),
-    [selectedCategory, allProjects, t.projects.all],
+    [selectedCategory, allProjects],
   );
 
   return (

@@ -165,6 +165,34 @@ const DATA_EN = {
           "Chat-Bot TechLab is a chatbot developed to support the services of TechLab at PCI (Parque de Ciência e Inovação de Aveiro). It includes two different conversation flows: Route A for getting to know TechLab's services and Route B for exploring ideas. The chatbot supports Portuguese and English, uses Claude Haiku 4.5, generates PDF summaries of conversations, sends PDFs directly by email, and allows users to save and load previous conversations as well as attach documents. Built with Next.js, TypeScript, React hooks, Tailwind CSS, jsPDF, and Mailgun.",
         github: "https://github.com/andrecj2002/chat-bot-techlab",
         live: "https://chat-bot-techlab.vercel.app",
+        stackTable: {
+          title: "Technologies Used",
+          columns: ["Libraries Used", "Functionality"],
+          rows: [
+            { name: "Next.js", description: "React framework for web apps" },
+            {
+              name: "jsPDF",
+              description: "PDF document generation on the front end",
+            },
+            {
+              name: "Iconify",
+              description: "Component with access to an SVG icon library",
+            },
+            {
+              name: "TypeScript",
+              description: "Typed language that compiles to JavaScript",
+            },
+            {
+              name: "Tailwind CSS",
+              description: "CSS framework for styling",
+            },
+            {
+              name: "ESLint",
+              description: "Tool for code quality control",
+            },
+            { name: "MailGun", description: "API for sending emails" },
+          ],
+        },
         tech: [
           { name: "Next.js", icon: "skill-icons:nextjs-dark" },
           { name: "TypeScript", icon: "logos:typescript-icon" },
@@ -172,6 +200,8 @@ const DATA_EN = {
           { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
           { name: "jsPDF", icon: "lucide:file-text" },
           { name: "Mailgun", icon: "lucide:mail" },
+          { name: "Iconify", icon: "simple-icons:iconify" },
+          { name: "ESLint", icon: "logos:eslint" },
         ],
       },
       {
@@ -426,6 +456,34 @@ const DATA_PT: typeof DATA_EN = {
           "Chat-Bot TechLab é um chatbot desenvolvido para apoiar os serviços do TechLab no PCI (Parque de Ciência e Inovação de Aveiro). Inclui dois fluxos de conversa diferentes: Rota A para conhecer os serviços do TechLab e Rota B para explorar ideias. O chatbot suporta português e inglês, utiliza o Claude Haiku 4.5, gera resumos em PDF das conversas, envia os PDFs diretamente por email, e permite aos utilizadores guardar e carregar conversas anteriores, bem como anexar documentos. Construído com Next.js, TypeScript, React hooks, Tailwind CSS, jsPDF e Mailgun.",
         github: "https://github.com/andrecj2002/chat-bot-techlab",
         live: "https://chat-bot-techlab.vercel.app",
+        stackTable: {
+          title: "Tecnologias Utilizadas",
+          columns: ["Bibliotecas Utilizadas", "Funcionalidade"],
+          rows: [
+            { name: "Next.js", description: "Framework React para web-apps" },
+            {
+              name: "jsPDF",
+              description: "Geração de documentos PDF no Front-End",
+            },
+            {
+              name: "Iconify",
+              description: "Componente com acesso a Biblioteca de Ícones SVG",
+            },
+            {
+              name: "TypeScript",
+              description: "Linguagem tipada com compilação para JavaScript",
+            },
+            {
+              name: "Tailwind CSS",
+              description: "Framework CSS para estilização",
+            },
+            {
+              name: "ESLint",
+              description: "Ferramenta para controlo de qualidade do código",
+            },
+            { name: "MailGun", description: "API para envio de e-mails" },
+          ],
+        },
         tech: [
           { name: "Next.js", icon: "skill-icons:nextjs-dark" },
           { name: "TypeScript", icon: "logos:typescript-icon" },
@@ -433,6 +491,8 @@ const DATA_PT: typeof DATA_EN = {
           { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
           { name: "jsPDF", icon: "lucide:file-text" },
           { name: "Mailgun", icon: "lucide:mail" },
+          { name: "Iconify", icon: "simple-icons:iconify" },
+          { name: "ESLint", icon: "logos:eslint" },
         ],
       },
       {
