@@ -80,13 +80,15 @@ export const UI_TEXT = {
           "Tell me about your project, timeline, and any specific requirements...",
       },
       successTitle: "Message Sent Successfully",
-      successDescription: "Thank you for your message! I'll get back to you soon.",
+      successDescription:
+        "Thank you for your message! I'll get back to you soon.",
       errorTitle: "Failed to Send Message",
       errorDescription:
         "Email configuration is incomplete. Please check environment variables.",
       generalError: "Failed to send message. Please try again later.",
       successHeading: "Message Sent Successfully!",
-      successParagraph: "Thank you for reaching out. I'll get back to you as soon as possible.",
+      successParagraph:
+        "Thank you for reaching out. I'll get back to you as soon as possible.",
       sendAnother: "Send Another Message",
       ariaSendAnother: "Send another message",
       mapError: "Unable to load map",
@@ -175,7 +177,8 @@ export const UI_TEXT = {
         "A configuração do email está incompleta. Verifica as variáveis de ambiente.",
       generalError: "Falha ao enviar mensagem. Tenta novamente mais tarde.",
       successHeading: "Mensagem Enviada com Sucesso!",
-      successParagraph: "Obrigado por entrares em contacto. Respondo assim que possível.",
+      successParagraph:
+        "Obrigado por entrares em contacto. Respondo assim que possível.",
       sendAnother: "Enviar Outra Mensagem",
       ariaSendAnother: "Enviar outra mensagem",
       mapError: "Não foi possível carregar o mapa",

@@ -30,7 +30,9 @@ const ProjectsPage = () => {
     [allProjects],
   );
 
-  const [selectedCategory, setSelectedCategory] = useState<string>(t.projects.all);
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    t.projects.all,
+  );
 
   const filteredProjects = useMemo(
     () =>

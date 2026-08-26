@@ -25,10 +25,8 @@ const ModalZoomControls = ({
 }) => {
   const { t } = useLocale();
 
-  const handleZoomIn = () =>
-    setZoom((current) => Math.min(current + 0.25, 3));
-  const handleZoomOut = () =>
-    setZoom((current) => Math.max(current - 0.25, 1));
+  const handleZoomIn = () => setZoom((current) => Math.min(current + 0.25, 3));
+  const handleZoomOut = () => setZoom((current) => Math.max(current - 0.25, 1));
 
   return (
     <div className="absolute right-4 top-4 z-10 flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-2 backdrop-blur-sm">
@@ -109,7 +107,9 @@ export const ProjectDetails = ({ projectId }: ProjectDetailsProps) => {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold mb-3">{t.projects.technologies}</h2>
+            <h2 className="text-xl font-semibold mb-3">
+              {t.projects.technologies}
+            </h2>
             <div className="flex flex-wrap gap-2">
               {project.tech.map((tool) => (
                 <Chip key={tool.name} variant="flat">
@@ -171,7 +171,9 @@ export const ProjectDetails = ({ projectId }: ProjectDetailsProps) => {
       {architectureSection && (
         <section className="mt-12 space-y-5 rounded-2xl border border-white/10 bg-black/20 p-4 sm:p-6">
           <div className="space-y-3">
-            <h2 className="text-2xl font-semibold">{architectureSection.title}</h2>
+            <h2 className="text-2xl font-semibold">
+              {architectureSection.title}
+            </h2>
             <p className="text-foreground-600 leading-relaxed">
               {architectureSection.description}
             </p>
@@ -232,6 +234,7 @@ export const ProjectDetails = ({ projectId }: ProjectDetailsProps) => {
             }
           }}
         >
+          {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
           <div
             className="relative flex max-h-[95vh] max-w-[95vw] items-center justify-center overflow-auto rounded-lg bg-black p-2"
             onClick={(e) => e.stopPropagation()}

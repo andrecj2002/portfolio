@@ -12,7 +12,8 @@ const DATA_EN = {
   about: {
     experience: [
       {
-        title: "Internship — Design Factory at PCI – Parque de Ciência e Inovação de Aveiro",
+        title:
+          "Internship — Design Factory at PCI – Parque de Ciência e Inovação de Aveiro",
         date: "Oct 2025 - May 2026",
         icon: "mdi:briefcase-outline",
         description:
@@ -130,10 +131,7 @@ const DATA_EN = {
           title: "Architecture and Data Flow",
           description:
             "The backend was built with Node.js and Express.js to expose a modular REST API, while Prisma and PostgreSQL handled database access, schema management, migrations, and automatic seeding. GitHub Actions was used to automate CI/CD workflows, including preview builds with the Vercel CLI and scheduled cron jobs to update monthly user budgets, rotate the daily tip, and generate the daily championship via Gemini.",
-          images: [
-            "/images/Screenshot_12.jpg",
-            "/images/Picture1_HQ.svg",
-          ],
+          images: ["/images/Screenshot_12.jpg", "/images/Picture1_HQ.svg"],
           imageLabels: ["Architecture overview", "Database schema"],
         },
         category: "Mobile Development",
@@ -215,7 +213,10 @@ const DATA_EN = {
                   page: "Commitments",
                   image: "/images/commitments_final_first_frame.png",
                 },
-                { page: "Events", image: "/images/events_final_first_frame.png" },
+                {
+                  page: "Events",
+                  image: "/images/events_final_first_frame.png",
+                },
               ],
             },
           ],
