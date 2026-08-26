@@ -183,7 +183,8 @@ const DATA_EN = {
             },
             {
               name: "TypeScript",
-              description: "Typed programming language that compiles to JavaScript",
+              description:
+                "Typed programming language that compiles to JavaScript",
             },
             {
               name: "Tailwind CSS",
@@ -483,7 +484,10 @@ const DATA_PT: typeof DATA_EN = {
           title: "Tecnologias Utilizadas",
           columns: ["Bibliotecas Utilizadas", "Funcionalidade"],
           rows: [
-            { name: "Next.js", description: "Framework React para aplicações web" },
+            {
+              name: "Next.js",
+              description: "Framework React para aplicações web",
+            },
             {
               name: "jsPDF",
               description: "Geração de documentos PDF no Front-End",

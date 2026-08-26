@@ -46,12 +46,14 @@ const stepsByLocale = {
   pt: [
     {
       leftTitle: "Utilizador Inicia Conversa",
-      leftText: "Interface web\nMostrar e Escrever Mensagens;\nEnviar Ficheiros",
+      leftText:
+        "Interface web\nMostrar e Escrever Mensagens;\nEnviar Ficheiros",
       rightTitle: "React +\nTypeScript",
     },
     {
       leftTitle: "Lógica da Aplicação",
-      leftText: "Validação das mensagens;\nProcessa imagens;\nPrepara pedido à API",
+      leftText:
+        "Validação das mensagens;\nProcessa imagens;\nPrepara pedido à API",
       rightTitle: "Node.js +\nTypeScript",
     },
     {
@@ -79,7 +81,8 @@ const stepsByLocale = {
     },
     {
       leftTitle: "Envio por E-mail e Exportação",
-      leftText: "Envia PDF exportado para e-mail\ne permite download ao utilizador",
+      leftText:
+        "Envia PDF exportado para e-mail\ne permite download ao utilizador",
       rightTitle: "Node.js + Mailgun\nAPI",
     },
   ],

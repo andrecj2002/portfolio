@@ -58,9 +58,7 @@ export const HeroSection = ({
             <Icon className="w-7 h-7" icon="logos:typescript-icon" />
             <Icon className="w-7 h-7" icon="logos:tailwindcss-icon" />
           </div>
-          <h1
-            className="mb-6 break-words font-bold text-foreground text-xl sm:text-2xl md:text-4xl"
-          >
+          <h1 className="mb-6 break-words font-bold text-foreground text-xl sm:text-2xl md:text-4xl">
             {t.home.greeting.replace("{name}", name ?? hero.name)}
           </h1>
           <p className="text-foreground-600 text-base sm:text-lg md:text-xl mb-8 leading-relaxed break-words">
