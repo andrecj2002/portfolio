@@ -59,7 +59,7 @@ export const HeroSection = ({
             <Icon className="w-7 h-7" icon="logos:tailwindcss-icon" />
           </div>
           <h1
-            className={`font-bold mb-6 text-foreground break-words ${locale === "pt" ? "text-xl sm:text-2xl md:text-4xl" : "text-2xl sm:text-3xl md:text-5xl"}`}
+            className="mb-6 break-words font-bold text-foreground text-xl sm:text-2xl md:text-4xl"
           >
             {t.home.greeting.replace("{name}", name ?? hero.name)}
           </h1>

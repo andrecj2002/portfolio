@@ -52,6 +52,7 @@ const ImageGallery = memo(({ images, imageLabels }: ImageGalleryProps) => {
             }`}
             loading="lazy"
             src={images[activeIndex]}
+            unoptimized={images[activeIndex]?.endsWith(".gif")}
             onLoad={() => setImageLoaded(true)}
           />
           <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-white bg-black/60 px-3 py-1 rounded opacity-80 group-hover:opacity-100 pointer-events-none select-none transition">
@@ -77,6 +78,7 @@ const ImageGallery = memo(({ images, imageLabels }: ImageGalleryProps) => {
             alt={`Project fullscreen ${activeIndex + 1}`}
             className="max-h-[95vh] max-w-[95vw] object-contain shadow-2xl"
             src={images[activeIndex]}
+            unoptimized={images[activeIndex]?.endsWith(".gif")}
             style={{ background: "black" }}
             width={1200}
             height={900}
@@ -89,35 +91,38 @@ const ImageGallery = memo(({ images, imageLabels }: ImageGalleryProps) => {
           {imageLabels[activeIndex]}
         </p>
       )}
-      <div className="flex flex-wrap justify-center gap-3">
-        {images.map((img, index) => (
-          <motion.div
-            key={img}
-            className={`h-16 w-16 overflow-hidden rounded-lg border-2 cursor-pointer md:h-20 md:w-20 ${
-              index === activeIndex ? "border-white" : "border-transparent"
-            }`}
-            transition={{ duration: 0.3 }}
-            whileHover={{ scale: 1.05 }}
-            onClick={() => handleThumbnailClick(index)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                handleThumbnailClick(index);
-              }
-            }}
-          >
-            <Image
-              alt={`Thumbnail ${index + 1}`}
-              className="w-full h-full object-contain"
-              loading="lazy"
-              src={img}
-              width={100}
-              height={100}
-            />
-          </motion.div>
-        ))}
-      </div>
+      {images.length > 1 && (
+        <div className="flex flex-wrap justify-center gap-3">
+          {images.map((img, index) => (
+            <motion.div
+              key={img}
+              className={`h-16 w-16 overflow-hidden rounded-lg border-2 cursor-pointer md:h-20 md:w-20 ${
+                index === activeIndex ? "border-white" : "border-transparent"
+              }`}
+              transition={{ duration: 0.3 }}
+              whileHover={{ scale: 1.05 }}
+              onClick={() => handleThumbnailClick(index)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  handleThumbnailClick(index);
+                }
+              }}
+            >
+              <Image
+                alt={`Thumbnail ${index + 1}`}
+                className="w-full h-full object-contain"
+                loading="lazy"
+                src={img}
+                unoptimized={img.endsWith(".gif")}
+                width={100}
+                height={100}
+              />
+            </motion.div>
+          ))}
+        </div>
+      )}
     </div>
   );
 });

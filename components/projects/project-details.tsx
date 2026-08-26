@@ -7,6 +7,7 @@ import { Button, Chip } from "@heroui/react";
 
 import type { Project } from "@/components/projects/types";
 import ImageGallery from "@/components/image-gallery";
+import { TechLabFlowDiagram } from "@/components/projects/techlab-flow-diagram";
 import { getData } from "@/data";
 import { useLocale } from "@/hooks/use-locale";
 
@@ -221,6 +222,8 @@ export const ProjectDetails = ({ projectId }: ProjectDetailsProps) => {
           </div>
         </section>
       )}
+
+      {project.id === 5 && <TechLabFlowDiagram />}
 
       {project.stackTable && (
         <section className="mt-12 space-y-5 rounded-2xl border border-white/10 bg-black/20 p-4 sm:p-6">

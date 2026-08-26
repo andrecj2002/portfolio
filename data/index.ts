@@ -6,7 +6,7 @@ const DATA_EN = {
       name: "André Jorge",
       title: "Full Stack Developer & UI/UX Designer",
       subtitle:
-        "Full Stack Developer & UI/UX Designer: Hi! I'm a Full Stack Developer.",
+        "Full Stack Developer & UI/UX Designer: Full Stack Developer with a focus on front-end.",
     },
   },
   about: {
@@ -166,31 +166,34 @@ const DATA_EN = {
         github: "https://github.com/andrecj2002/chat-bot-techlab",
         live: "https://chat-bot-techlab.vercel.app",
         stackTable: {
-          title: "Technologies Used",
-          columns: ["Libraries Used", "Functionality"],
+          title: "Technology Stack",
+          columns: ["Tools Used", "Functionality"],
           rows: [
-            { name: "Next.js", description: "React framework for web apps" },
+            {
+              name: "Next.js",
+              description: "React framework for web applications",
+            },
             {
               name: "jsPDF",
               description: "PDF document generation on the front end",
             },
             {
               name: "Iconify",
-              description: "Component with access to an SVG icon library",
+              description: "Component library with access to an SVG icon set",
             },
             {
               name: "TypeScript",
-              description: "Typed language that compiles to JavaScript",
+              description: "Typed programming language that compiles to JavaScript",
             },
             {
               name: "Tailwind CSS",
-              description: "CSS framework for styling",
+              description: "Utility-first CSS framework for styling",
             },
             {
               name: "ESLint",
-              description: "Tool for code quality control",
+              description: "Tool for code quality and linting",
             },
-            { name: "MailGun", description: "API for sending emails" },
+            { name: "Mailgun", description: "API for sending emails" },
           ],
         },
         tech: [
@@ -257,6 +260,26 @@ const DATA_EN = {
           { name: "UI/UX", icon: "lucide:layout-template" },
         ],
       },
+      {
+        id: 7,
+        title: "Aveiro Smart Connected Spaces",
+        description:
+          "Landing page developed during my internship at PCI – Parque de Ciência e Inovação de Aveiro for Aveiro Smart Connected Spaces, a platform created to present the initiatives and ecosystem of the Aveiro Smart Connected Spaces project. The work included research into similar testbeds in Portugal, an interface design aligned with the established brand identity, and implementation in Vue.js.",
+        image: "/images/capa_ascs.png",
+        detailImage: "/images/ascs_showcase.gif",
+        gallery: [],
+        category: "Web Development",
+        details:
+          "Aveiro Smart Connected Spaces is a landing page developed during my internship at PCI (Parque de Ciência e Inovação de Aveiro). The project was created to present the Aveiro Smart Connected Spaces initiative and its ecosystem through a clear digital experience. It included research on similar testbeds across Portugal, a UI design process in Figma, and implementation in Vue.js, while respecting the already established brand identity, including typography, logo usage, and the overall visual system. The result is a modern, information-focused landing page that communicates the project clearly and consistently.",
+        live: "https://landingpage-ascs.vercel.app",
+        tech: [
+          { name: "Vue.js", icon: "logos:vue" },
+          { name: "Vite", icon: "logos:vitejs" },
+          { name: "Figma", icon: "logos:figma" },
+          { name: "UI/UX", icon: "lucide:layout-template" },
+          { name: "JavaScript", icon: "logos:javascript" },
+        ],
+      },
     ],
   },
   footer: {
@@ -294,7 +317,7 @@ const DATA_PT: typeof DATA_EN = {
       name: "André Jorge",
       title: "Programador Full Stack & Designer UI/UX",
       subtitle:
-        "Programador Full Stack & Designer UI/UX: Olá! Sou um Programador Full Stack.",
+        "Programador Full Stack & Designer UI/UX: Programador Full Stack com foco em front-end.",
     },
   },
   about: {
@@ -460,14 +483,14 @@ const DATA_PT: typeof DATA_EN = {
           title: "Tecnologias Utilizadas",
           columns: ["Bibliotecas Utilizadas", "Funcionalidade"],
           rows: [
-            { name: "Next.js", description: "Framework React para web-apps" },
+            { name: "Next.js", description: "Framework React para aplicações web" },
             {
               name: "jsPDF",
               description: "Geração de documentos PDF no Front-End",
             },
             {
               name: "Iconify",
-              description: "Componente com acesso a Biblioteca de Ícones SVG",
+              description: "Componente com acesso a biblioteca de ícones SVG",
             },
             {
               name: "TypeScript",
@@ -481,7 +504,7 @@ const DATA_PT: typeof DATA_EN = {
               name: "ESLint",
               description: "Ferramenta para controlo de qualidade do código",
             },
-            { name: "MailGun", description: "API para envio de e-mails" },
+            { name: "Mailgun", description: "API para envio de e-mails" },
           ],
         },
         tech: [
@@ -546,6 +569,26 @@ const DATA_PT: typeof DATA_EN = {
           { name: "Figma", icon: "logos:figma" },
           { name: "Design System", icon: "lucide:palette" },
           { name: "UI/UX", icon: "lucide:layout-template" },
+        ],
+      },
+      {
+        id: 7,
+        title: "Aveiro Smart Connected Spaces",
+        description:
+          "Landing page desenvolvida durante o meu estágio no PCI – Parque de Ciência e Inovação de Aveiro para o Aveiro Smart Connected Spaces, uma plataforma criada para apresentar as iniciativas e o ecossistema do projeto Aveiro Smart Connected Spaces. O trabalho incluiu pesquisa sobre testbeds semelhantes em Portugal, um design de interface alinhado com a identidade visual já estabelecida e implementação em Vue.js.",
+        image: "/images/capa_ascs.png",
+        detailImage: "/images/ascs_showcase.gif",
+        gallery: [],
+        category: "Desenvolvimento Web",
+        details:
+          "Aveiro Smart Connected Spaces é uma landing page desenvolvida durante o meu estágio no PCI (Parque de Ciência e Inovação de Aveiro). O projeto foi criado para apresentar a iniciativa Aveiro Smart Connected Spaces e o seu ecossistema através de uma experiência digital clara e objetiva. Incluiu pesquisa sobre testbeds semelhantes em Portugal, um processo de design UI em Figma e implementação em Vue.js, respeitando a identidade visual já estabelecida, incluindo tipografia, logótipo e o conjunto geral da linguagem visual. O resultado é uma landing page moderna, com foco na informação e na comunicação eficaz do projeto.",
+        live: "https://landingpage-ascs.vercel.app",
+        tech: [
+          { name: "Vue.js", icon: "logos:vue" },
+          { name: "Vite", icon: "logos:vitejs" },
+          { name: "Figma", icon: "logos:figma" },
+          { name: "UI/UX", icon: "lucide:layout-template" },
+          { name: "JavaScript", icon: "logos:javascript" },
         ],
       },
     ],
