@@ -3,18 +3,21 @@
 import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
 
-import { DATA } from "@/data";
+import { getData } from "@/data";
+import { useLocale } from "@/hooks/use-locale";
 
 export const Footer = () => {
-  const { name, description, contact, socialLinks, services } = DATA.footer;
+  const { t, locale } = useLocale();
+  const { name, description, contact, socialLinks, services } =
+    getData(locale).footer;
 
   return (
     <footer className="bg-content1 py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Let&apos;s Connect</h3>
-            <p className="text-foreground-600 mb-4">{description}</p>
+            <h3 className="text-2xl font-bold mb-4">{t.footer.heading}</h3>
+            <p className="text-foreground-600 mb-4">{t.footer.description}</p>
             <div className="flex gap-4">
               {socialLinks.map((social, index) => (
                 <a
@@ -36,7 +39,7 @@ export const Footer = () => {
             </div>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
+            <h4 className="font-semibold mb-4">{t.footer.services}</h4>
             <ul className="space-y-2 text-foreground-600">
               {services.map((service, index) => (
                 <li key={index}>{service}</li>
@@ -44,7 +47,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
+            <h4 className="font-semibold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-2 text-foreground-600">
               <li className="flex min-w-0 items-start gap-2">
                 <Icon icon="lucide:mail" />
@@ -68,7 +71,7 @@ export const Footer = () => {
         </div>
         <div className="border-t border-divider pt-8 text-center text-foreground-500">
           <p>
-            © {new Date().getFullYear()} {name}. made with &hearts;.
+            © {new Date().getFullYear()} {name}. {t.footer.madeWith}
           </p>
         </div>
       </div>

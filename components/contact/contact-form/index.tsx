@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ContactFormProps } from "@/components/contact/types";
 import { useContactForm } from "@/hooks/use-contact-form";
 import { SuccessMessage } from "@/components/contact/contact-form/success-message";
+import { useLocale } from "@/hooks/use-locale";
 
 export const ContactForm: React.FC<ContactFormProps> = ({
   onSubmit,
@@ -15,6 +16,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   isSuccess,
   onReset,
 }) => {
+  const { t } = useLocale();
   const {
     formData,
     errors,
@@ -69,9 +71,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             isRequired
             errorMessage={errors.name}
             isInvalid={!!errors.name}
-            label="Name"
+            label={t.contact.name}
             name="name"
-            placeholder="Your full name"
+            placeholder={t.contact.placeholders.name}
             startContent={<Icon icon="lucide:user" />}
             value={formData.name}
             variant="bordered"
@@ -83,9 +85,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             isRequired
             errorMessage={errors.email}
             isInvalid={!!errors.email}
-            label="Email"
+            label={t.contact.email}
             name="email"
-            placeholder="your.email@example.com"
+            placeholder={t.contact.placeholders.email}
             startContent={<Icon icon="lucide:mail" />}
             type="email"
             value={formData.email}
@@ -99,9 +101,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({
           isRequired
           errorMessage={errors.subject}
           isInvalid={!!errors.subject}
-          label="Subject"
+          label={t.contact.subject}
           name="subject"
-          placeholder="Project type or inquiry topic"
+          placeholder={t.contact.placeholders.subject}
           startContent={<Icon icon="lucide:briefcase" />}
           value={formData.subject}
           variant="bordered"
@@ -113,11 +115,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({
           isRequired
           errorMessage={errors.message}
           isInvalid={!!errors.message}
-          label="Message"
+          label={t.contact.message}
           maxRows={8}
           minRows={4}
           name="message"
-          placeholder="Tell me about your project, timeline, and any specific requirements..."
+          placeholder={t.contact.placeholders.message}
           value={formData.message}
           variant="bordered"
           onBlur={() => handleInputBlur("message", formData.message)}
@@ -126,7 +128,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
         <div className="flex flex-col gap-4">
           <Button
-            aria-label="Sending"
+            aria-label={t.contact.sending}
             className="w-full h-14 border border-foreground bg-transparent text-base font-medium text-foreground shadow-none transition-colors hover:bg-white hover:!text-black dark:border-white dark:text-white"
             isDisabled={!isValid || isSubmitting}
             isLoading={isSubmitting}
@@ -139,11 +141,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             type="submit"
             variant="bordered"
           >
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? t.contact.sending : t.contact.send}
           </Button>
 
           <Button
-            aria-label="Reset Form"
+            aria-label={t.contact.reset}
             className="w-full h-14 border border-foreground bg-transparent text-base text-foreground transition-colors hover:bg-white hover:!text-black dark:border-white dark:text-white"
             color="default"
             isDisabled={isSubmitting}
@@ -157,7 +159,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             variant="bordered"
             onPress={resetForm}
           >
-            Reset Form
+            {t.contact.reset}
           </Button>
         </div>
       </motion.form>

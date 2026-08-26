@@ -14,12 +14,15 @@ import { Icon } from "@iconify/react";
 
 import ImageGallery from "@/components/image-gallery";
 import { ProjectModalProps } from "@/components/projects/types";
+import { useLocale } from "@/hooks/use-locale";
 
 export const ProjectModal = ({
   isOpen,
   onClose,
   project,
 }: ProjectModalProps) => {
+  const { t } = useLocale();
+
   if (!project) return null;
 
   return (
@@ -51,7 +54,7 @@ export const ProjectModal = ({
             {project.tech && (
               <div className="mb-6">
                 <h4 className="font-semibold mb-6 text-foreground">
-                  Technologies Used:
+                  {t.projects.technologies}:
                 </h4>
                 <AvatarGroup>
                   {project.tech.map(({ name, icon }) => (
@@ -76,7 +79,7 @@ export const ProjectModal = ({
           <div className="flex justify-end mb-4 px-6 gap-3">
             {project.github && (
               <a
-                aria-label="View on GitHub"
+                aria-label={t.projects.github}
                 className="text-foreground-500 hover:text-foreground transition"
                 href={project.github}
                 rel="noopener noreferrer"
@@ -87,7 +90,7 @@ export const ProjectModal = ({
             )}
             {project.live && (
               <a
-                aria-label="View Live Project"
+                aria-label={t.projects.live}
                 className="text-foreground-500 hover:text-foreground transition"
                 href={project.live}
                 rel="noopener noreferrer"
@@ -105,7 +108,7 @@ export const ProjectModal = ({
             variant="light"
             onClick={onClose}
           >
-            Close
+            {t.projects.close}
           </Button>
         </ModalFooter>
       </ModalContent>

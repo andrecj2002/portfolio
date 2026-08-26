@@ -4,11 +4,14 @@ import Image from "next/image";
 import { Card, CardBody, CardFooter } from "@heroui/react";
 
 import { ProjectCardProps } from "@/components/projects/types";
+import { useLocale } from "@/hooks/use-locale";
 
 export const ProjectCard = memo(function ProjectCard({
   project,
   href,
 }: ProjectCardProps) {
+  const { t } = useLocale();
+
   return (
     <Card
       as={Link}
@@ -56,7 +59,7 @@ export const ProjectCard = memo(function ProjectCard({
             {project.description}
           </p>
           <div className="inline-flex w-full md:w-auto items-center justify-center gap-2 rounded-medium border border-white px-4 py-2 text-sm text-white transition-colors hover:bg-white hover:!text-black">
-            View Details
+            {t.projects.detail}
             <span aria-hidden="true">→</span>
           </div>
         </div>

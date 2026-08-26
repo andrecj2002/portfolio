@@ -5,21 +5,22 @@ import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
 
 import { OrbitingCircles } from "@/components/orbiting-circles";
-import { DATA } from "@/data";
+import { getData } from "@/data";
+import { useLocale } from "@/hooks/use-locale";
 
 export const SkillsOverviewSection = () => {
-  const { sectionTitle, sectionDescription } = DATA.home.skills;
-  const technologies = DATA.about.technologies;
+  const { t, locale } = useLocale();
+  const technologies = getData(locale).about.technologies;
 
   return (
     <section className="py-20 bg-content1">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {sectionTitle}
+            {t.home.sectionTitle}
           </h2>
           <p className="text-foreground-600 text-lg max-w-2xl mx-auto">
-            {sectionDescription}
+            {t.home.sectionDescription}
           </p>
         </div>
 
@@ -28,9 +29,9 @@ export const SkillsOverviewSection = () => {
             <div key={category} className="text-center">
               <h3 className="mb-3 text-lg font-semibold">
                 {{
-                  backendAndData: "Backend & Data",
-                  designAndDelivery: "Design & Delivery",
-                  development: "Development",
+                  backendAndData: t.home.categories.backendAndData,
+                  designAndDelivery: t.home.categories.designAndDelivery,
+                  development: t.home.categories.development,
                 }[category] ?? category}
               </h3>
               <div className="relative mx-auto h-64 w-full max-w-xs overflow-hidden">
@@ -59,7 +60,7 @@ export const SkillsOverviewSection = () => {
             size="lg"
             variant="shadow"
           >
-            View more
+            {t.home.viewMoreShort}
           </Button>
         </div>
       </div>

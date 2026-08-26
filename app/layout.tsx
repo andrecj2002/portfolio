@@ -4,16 +4,19 @@ import { clsx } from "clsx";
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { DATA } from "@/data";
+import { getData } from "@/data";
 import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navbar";
 import { PageWrapper } from "@/components/page-wrapper";
 import { Providers } from "@/app/providers";
+import { LocaleProvider } from "@/hooks/use-locale";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
+
+const DATA = getData("pt");
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://heroui.net"),
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
     },
     description: DATA.home.hero.subtitle,
     siteName: DATA.home.hero.name,
-    locale: "en_US",
+    locale: "pt_PT",
     type: "website",
   },
   robots: {
@@ -66,7 +69,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   );
 
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning lang="pt-PT">
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
@@ -77,9 +80,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           themeProps={{
             attribute: "class",
             defaultTheme: "dark",
+            forcedTheme: "dark",
           }}
         >
-          {content}
+          <LocaleProvider>{content}</LocaleProvider>
         </Providers>
       </body>
     </html>

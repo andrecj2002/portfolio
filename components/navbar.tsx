@@ -14,16 +14,21 @@ import {
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { DATA } from "@/data";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { LogoBranco } from "@/components/logo-branco";
+import { useLocale } from "@/hooks/use-locale";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+  const { t } = useLocale();
 
-  const menuItems = DATA.navigation;
+  const menuItems = [
+    { name: t.nav.home, href: "/", icon: "lucide:home" },
+    { name: t.nav.about, href: "/about", icon: "lucide:user" },
+    { name: t.nav.projects, href: "/projects", icon: "lucide:folder-code" },
+  ];
 
   return (
     <Navbar
@@ -63,12 +68,12 @@ export const Navigation = () => {
             </NavbarItem>
           ))}
           <NavbarItem>
-            <ThemeSwitcher />
+            <LanguageSwitcher />
           </NavbarItem>
         </div>
 
         <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={isMenuOpen ? t.nav.menuClose : t.nav.menuOpen}
           className="sm:hidden"
         />
       </NavbarContent>
@@ -76,7 +81,7 @@ export const Navigation = () => {
       {/* Mobile Menu */}
       <NavbarMenu className="bg-background/80 backdrop-blur-lg pt-6 sm:hidden">
         <div className="mx-auto max-w-lg space-y-4">
-          {menuItems.map((item, index) => (
+          {menuItems.map((item) => (
             <NavbarMenuItem key={item.name}>
               <Link
                 className={`w-full flex items-center gap-3 py-3 px-4 rounded-medium hover:bg-content1 transition-colors ${
@@ -94,6 +99,9 @@ export const Navigation = () => {
               </Link>
             </NavbarMenuItem>
           ))}
+          <div className="pt-2">
+            <LanguageSwitcher />
+          </div>
         </div>
       </NavbarMenu>
     </Navbar>

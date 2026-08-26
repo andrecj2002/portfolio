@@ -36,5 +36,5 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  return <ProjectDetails project={project} />;
+  return <ProjectDetails projectId={project.id} />;
 }

@@ -6,11 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ContactMapProps } from "../types";
 
 import { MapSkeleton } from "@/components/contact/contact-map/map-skeleton";
+import { useLocale } from "@/hooks/use-locale";
 
 export const ContactMap: React.FC<ContactMapProps> = ({
   src,
   className = "",
 }) => {
+  const { t } = useLocale();
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -55,7 +57,7 @@ export const ContactMap: React.FC<ContactMapProps> = ({
           >
             <div className="text-center space-y-2">
               <div className="text-default-400 text-lg">📍</div>
-              <p className="text-default-500 text-sm">Unable to load map</p>
+              <p className="text-default-500 text-sm">{t.contact.mapError}</p>
             </div>
           </motion.div>
         ) : (
@@ -70,7 +72,7 @@ export const ContactMap: React.FC<ContactMapProps> = ({
             style={{
               visibility: isLoaded ? "visible" : "hidden",
             }}
-            title="Location Map"
+            title={t.contact.mapTitle}
             transition={{ duration: 0.5, ease: "easeOut" }}
             onError={handleError}
             onLoad={handleLoad}

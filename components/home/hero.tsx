@@ -6,18 +6,26 @@ import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 
-import { DATA } from "@/data";
+import { getData } from "@/data";
 import { LogoBranco } from "@/components/logo-branco";
+import { useLocale } from "@/hooks/use-locale";
 
 export const HeroSection = ({
-  name = DATA.home.hero.name,
-  title = DATA.home.hero.title,
-  subtitle = DATA.home.hero.subtitle,
+  name,
+  title,
+  subtitle,
 }: {
   name?: string;
   title?: string;
   subtitle?: string;
 }) => {
+  const { t, locale } = useLocale();
+  const hero = getData(locale).home.hero;
+  const resolvedSubtitle = subtitle ?? hero.subtitle;
+  const subtitleText = resolvedSubtitle.includes(":")
+    ? resolvedSubtitle.split(":").slice(1).join(":").trim()
+    : resolvedSubtitle;
+
   const scrollToWork = (_e: PressEvent) => {
     const workSection = document.getElementById("work-section");
 
@@ -50,24 +58,23 @@ export const HeroSection = ({
             <Icon className="w-7 h-7" icon="logos:typescript-icon" />
             <Icon className="w-7 h-7" icon="logos:tailwindcss-icon" />
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 text-foreground break-words">
-            Hi, I&apos;m {name} &mdash; I design &amp; code modern web
-            experiences.
+          <h1 className={`font-bold mb-6 text-foreground break-words ${locale === "pt" ? "text-xl sm:text-2xl md:text-4xl" : "text-2xl sm:text-3xl md:text-5xl"}`}>
+            {t.home.greeting.replace("{name}", name ?? hero.name)}
           </h1>
           <p className="text-foreground-600 text-base sm:text-lg md:text-xl mb-8 leading-relaxed break-words">
-            {title}: {subtitle}
+            {t.home.summary.replace("{subtitle}", subtitleText)}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <Button
               fullWidth
-              aria-label="View Work"
+              aria-label={t.home.viewWork}
               className="w-full border border-foreground bg-transparent text-foreground shadow-none transition-colors hover:bg-white hover:!text-black dark:border-white dark:text-white sm:w-auto"
               endContent={<Icon icon="lucide:arrow-down" />}
               size="lg"
               variant="bordered"
               onPress={scrollToWork}
             >
-              View Work
+              {t.home.viewWork}
             </Button>
           </div>
         </div>

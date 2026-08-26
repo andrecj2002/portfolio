@@ -7,6 +7,12 @@ export interface Project {
   readonly image: string;
   readonly detailImage?: string;
   readonly galleryLabels?: readonly (string | undefined)[];
+  readonly architectureSection?: {
+    title: string;
+    description: string;
+    images: readonly string[];
+    imageLabels?: readonly (string | undefined)[];
+  };
   readonly github?: string;
   readonly live?: string;
   readonly promoPage?: string;

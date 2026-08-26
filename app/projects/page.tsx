@@ -5,16 +5,18 @@ import { useState, useMemo } from "react";
 import { PageHeader } from "@/components/page-header";
 import { ProjectsTabs } from "@/components/projects/projects-tabs";
 import { ProjectsGrid } from "@/components/projects/projects-grid";
-import { DATA } from "@/data";
+import { getData } from "@/data";
+import { useLocale } from "@/hooks/use-locale";
 
 const normalizeCategory = (cat: string) => cat.trim().toLowerCase();
 
 const ProjectsPage = () => {
-  const allProjects = DATA.projects.work;
+  const { t, locale } = useLocale();
+  const allProjects = getData(locale).projects.work;
 
   const categories = useMemo(
     () => [
-      "All",
+      t.projects.all,
       ...Array.from(
         new Set(
           allProjects.map((project) => normalizeCategory(project.category)),
@@ -28,23 +30,23 @@ const ProjectsPage = () => {
     [allProjects],
   );
 
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState<string>(t.projects.all);
 
   const filteredProjects = useMemo(
     () =>
-      selectedCategory === "All"
+      selectedCategory === t.projects.all
         ? allProjects
         : allProjects.filter(
             (project) =>
               normalizeCategory(project.category) ===
               normalizeCategory(selectedCategory),
           ),
-    [selectedCategory, allProjects],
+    [selectedCategory, allProjects, t.projects.all],
   );
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
-      <PageHeader texts={DATA.morphingTexts.projects} />
+      <PageHeader texts={t.projects.texts} />
 
       <ProjectsTabs
         categories={categories}

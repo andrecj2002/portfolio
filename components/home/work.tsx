@@ -4,22 +4,23 @@ import Link from "next/link";
 import { Button } from "@heroui/react";
 
 import { ProjectCard } from "@/components/project-card";
-import { DATA } from "@/data";
+import { getData } from "@/data";
+import { useLocale } from "@/hooks/use-locale";
 import { slugify } from "@/lib/utils";
 
 export const WorkSection = () => {
-  const { work } = DATA.projects;
-  const { sectionTitle, sectionDescription } = DATA.projects;
+  const { t, locale } = useLocale();
+  const { work } = getData(locale).projects;
 
   return (
     <section className="py-20 bg-background" id="work-section">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {sectionTitle}
+            {t.home.workTitle}
           </h2>
           <p className="text-foreground-600 text-lg max-w-2xl mx-auto">
-            {sectionDescription}
+            {t.home.workDescription}
           </p>
         </div>
 
@@ -42,7 +43,7 @@ export const WorkSection = () => {
             size="lg"
             variant="shadow"
           >
-            View More Work
+            {t.home.viewMore}
           </Button>
         </div>
       </div>

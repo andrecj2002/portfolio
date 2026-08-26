@@ -2,9 +2,14 @@ import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { Button, Card, CardBody } from "@heroui/react";
 
+import { useLocale } from "@/hooks/use-locale";
+
 export const SuccessMessage: React.FC<{ onReset: () => void }> = ({
   onReset,
-}) => (
+}) => {
+  const { t } = useLocale();
+
+  return (
   <motion.div
     animate={{ opacity: 1, scale: 1, y: 0 }}
     exit={{ opacity: 0, scale: 0.9, y: -20 }}
@@ -33,11 +38,10 @@ export const SuccessMessage: React.FC<{ onReset: () => void }> = ({
             transition={{ delay: 0.3, duration: 0.4 }}
           >
             <h3 className="text-xl font-semibold text-success mb-2">
-              Message Sent Successfully!
+              {t.contact.successHeading}
             </h3>
             <p className="text-default-600 mb-4">
-              Thank you for reaching out. I&apos;ll get back to you as soon as
-              possible.
+              {t.contact.successParagraph}
             </p>
             <motion.div
               animate={{ opacity: 1, y: 0 }}
@@ -45,13 +49,13 @@ export const SuccessMessage: React.FC<{ onReset: () => void }> = ({
               transition={{ delay: 0.4, duration: 0.4 }}
             >
               <Button
-                aria-label="Send another message"
+                aria-label={t.contact.ariaSendAnother}
                 className="border border-foreground bg-transparent text-foreground shadow-none transition-colors hover:bg-white hover:!text-black dark:border-white dark:text-white"
                 startContent={<Icon icon="lucide:plus" />}
                 variant="bordered"
                 onPress={onReset}
               >
-                Send Another Message
+                {t.contact.sendAnother}
               </Button>
             </motion.div>
           </motion.div>
@@ -59,4 +63,5 @@ export const SuccessMessage: React.FC<{ onReset: () => void }> = ({
       </CardBody>
     </Card>
   </motion.div>
-);
+  );
+};
