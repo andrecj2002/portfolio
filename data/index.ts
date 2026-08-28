@@ -105,8 +105,6 @@ const DATA_EN = {
         category: "Web Development",
         details:
           "CosmoZone is a comprehensive event management system developed to help 'Centros de Ciência Viva' (Live Science Centers) in Portugal organize events and understand customer preferences. The platform was developed under Context Based Learning (CBL) at Universidade de Aveiro in collaboration with Planetário do Porto. The platform includes event management capabilities, user interaction through comments, and an administrative area with statistical data regarding event preferences and user locations. Usability tests were conducted with real users to verify and improve the UI experience. Built with JavaScript, HTML, PHP, and styled with Bootstrap.",
-        github: "https://github.com",
-        live: "https://example.com",
         tech: [
           { name: "JavaScript", icon: "logos:javascript" },
           { name: "HTML5", icon: "logos:html-5" },
@@ -417,8 +415,6 @@ const DATA_PT: typeof DATA_EN = {
         category: "Desenvolvimento Web",
         details:
           "CosmoZone é um sistema completo de gestão de eventos desenvolvido para ajudar os Centros de Ciência Viva em Portugal a organizar eventos e compreender as preferências dos clientes. A plataforma foi desenvolvida no âmbito de Context Based Learning (CBL) na Universidade de Aveiro em colaboração com o Planetário do Porto. A plataforma inclui funcionalidades de gestão de eventos, interação dos utilizadores através de comentários, e uma área administrativa com dados estatísticos sobre as preferências de eventos e localizações dos utilizadores. Foram realizados testes de usabilidade com utilizadores reais para verificar e melhorar a experiência de UI. Construído com JavaScript, HTML, PHP e estilizado com Bootstrap.",
-        github: "https://github.com",
-        live: "https://example.com",
         tech: [
           { name: "JavaScript", icon: "logos:javascript" },
           { name: "HTML5", icon: "logos:html-5" },

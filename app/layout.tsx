@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     template: `%s | ${DATA.home.hero.name}`,
   },
   description: DATA.home.hero.subtitle,
+  icons: {
+    icon: "/images/Logo_Branco.svg",
+  },
   openGraph: {
     title: {
       default: DATA.home.hero.name,
