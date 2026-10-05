@@ -305,7 +305,6 @@ const DATA_EN = {
       "Web Development",
       "UI/UX Design",
       "Content Creation",
-      "Web Development",
     ],
   },
 };
@@ -617,7 +616,6 @@ const DATA_PT: typeof DATA_EN = {
       "Desenvolvimento Web",
       "Design UI/UX",
       "Criação de Conteúdo",
-      "Desenvolvimento Web",
     ],
   },
 };
